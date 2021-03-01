@@ -90,6 +90,7 @@ header {
   position: fixed;
   top: 0;
   overflow: hidden;
+  background-color: var(--bg-color);
 }
 .page-header {
   display: flex;
