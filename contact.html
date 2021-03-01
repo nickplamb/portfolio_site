@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nicholas Lamb - Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A web development portfolio site for Nicholas Lamb. The Contact Me page.">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32" />
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <!-- Styling -->
+  <link rel="stylesheet" type="text/css" href="css/styles.production.css">
+</head>
+
+<body>
+<!-- Header -->
+  <header class="page-header">
+    <img src="img/nicholas_lamb_logo.svg" alt="My name, Nicholas Lamb" class="page-header__item logo">
+
+<!-- Navigation links -->
+    <nav class="main-nav page-header__item">
+      <ul role="menubar"class="nav-list">
+        <li role="presentation">
+          <a href="index.html" role="menuitem" class="nav-list__item">Home</a>
+        </li>
+        <li role="presentation">
+          <a href="about.html" role="menuitem" class="nav-list__item">About Me</a>
+        </li>
+        <li role="presentation">
+          <a href="work.html" role="menuitem" class="nav-list__item">My Projects</a>
+        </li>
+        <li role="presentation">
+          <a href="contact.html" role="menuitem" class="nav-list__item nav-list__item--active">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Main content -->
+  <main>
+    <h1><a href="mailto:nickplamb@gmail.com">Contact me</a></h1>
+    <p>
+      Nicholas Lamb<br>
+      85 Chaucer Ct<br>
+      Worthington Ohio, 43085<br>
+    </p>
+    <p>
+      Tel: <a href="tel:+16192285278" aria-label="My telephone number">1(619)228-5278</a><br>
+      Skype: <a href="skype:live:nickplamb" aria-label="My skype user name">live:nickplamb</a><br>
+      E-mail: <a href="mailto:nickplamb@gmail.com" aria-label="My email address">nickplamb@gmail.com</a>
+    </p>
+    <br>
+    <form action="" method="post">
+      <label class="contact-form-label" for="contact-name">Name</label><br>
+      <input type="text" id="contact-name" required>
+      <br>
+
+      <label class="contact-form-label" for="contact-email">E-mail: </label><br>
+      <input type="email" id="contact-email" required>
+      <br>
+
+      <label class="contact-form-label" for="contact-telephone">Telephone: </label><br>
+      <input type="tel" id="contact-telephone"> <!--pattern="\d{3}[\-]\d{3}[\-]\d{4}" -->
+      <br>
+
+      <label class="contact-form-label" for="contact-message">Message: </label><br>
+      <textarea maxlength="240" id="contact-message" required></textarea>
+      <p>Max 240 characters</p>
+
+      <!-- <input type="submit" value="Send message"> -->
+      <button type="submit" name="contact-form-submit">Send message</button>
+    </form>
+  </main>
+
+<!-- Footer -->
+  <footer class="page-footer">
+    <div class="footer-social-links">
+      <p>Find me on</p>
+      <a href="https://github.com/nickplamb" target="_blank">
+        <img src="img/iconfinder_github.svg" class="social-icons" alt="Github">
+      </a>
+      <!-- TODO add another social platform link here -->
+      <a href="#" target="_blank">
+        <img src="img/iconfinder_twitter.svg" class="social-icons" alt="Twitter">
+      </a>
+      <a href="https://www.linkedin.com/in/nicholas-p-lamb/" target="_blank">
+        <img src="img/iconfinder_linkedin.svg"  class="social-icons" alt="LinkedIn">
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/tota11y.min.js"></script>
+</body>
+</html>
