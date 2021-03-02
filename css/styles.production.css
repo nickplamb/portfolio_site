@@ -32,7 +32,7 @@ body {
   font-family: 'Roboto Slab', serif;
   color: #31708E;
   font-weight: 400;
-  margin: 20px 0;
+  margin: 0;
   line-height: 1.5;
 }
 h1 {
@@ -60,7 +60,9 @@ h6 {
   display: block;
 }
 main {
-  padding: 0 40px;
+  max-width: 80%;
+  margin:0 auto;
+  margin-top: 110px;
 }
 
 /* ---Links--- */
@@ -132,17 +134,20 @@ button:focus{
   color: #fff;
 }
 
-/* ---Header--- */
+/* ---------Header-------- */
 header {
-  padding: 0 50px;
   padding-bottom: 10px;
   border-bottom: 1px solid #5085A5;
+  position: fixed;
+  top: 0;
+  background-color: #F7F9FB;
 }
 .page-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  height: 98px;
   padding: 20px;
   /* flex-direction: row;
   justify-content: space-between; */
@@ -162,7 +167,7 @@ img.page-header__item {
   text-align: right;
 }
 
-/* ---Navigation--- */
+/* --------Navigation-------- */
 .nav-list{
   list-style-type: none;
   padding: 0;
@@ -173,6 +178,10 @@ img.page-header__item {
 a.nav-list__item {
   position: relative;
   padding: 0 7px;
+}
+.dropdown-menu__icon {
+  position: relative;
+  display: none;
 }
 
 /* Navigation animation */
@@ -470,7 +479,7 @@ th, td{
   }
 }
 
-@media all and (min-width: 500px) and (max-width: 750px){
+@media all and (min-width: 500px) and (max-width: 768px){
   body {
     font-size: 16px;
   }
@@ -492,20 +501,33 @@ th, td{
   }
 }
 
-@media all and (max-width: 750px) {
-  body {
-    margin: 0;
+@media all and (max-width: 768px) {
+  .page-header {
+    
   }
-  main {
-    padding: 0 20px;
+
+  /* dropdown menu  */
+  .dropdown-menu__icon {
+    display: block;
+    margin: 8px 15px 0 auto;
   }
   .nav-list {
-    padding-left: 0;
-    margin: 0;
+    position: relative;
+    display: inline-block;
   }
-  .nav-list li {
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    min-width: 120px;
+    background-color: rgb(143, 193, 227, 0.30); /* var(--secondary-txt-color) */
+  }
+  .nav-list:hover .dropdown-content {
     display: block;
   }
+
+  /* Main content grid */
   .grid {
     grid-gap: 10px;
   }
@@ -515,5 +537,15 @@ th, td{
   }
   .grid__item {
     font-size: 14px;
+  }
+
+}
+@media all and (max-width: 1024px) {
+  body {
+    margin: 0;
+  }
+  main {
+    padding: 0 20px;
+    max-width: 100%;
   }
 }
