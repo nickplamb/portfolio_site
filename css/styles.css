@@ -191,8 +191,9 @@ footer a {
 }
 .profile {
   max-width: 700px;
-  min-height: 250px;
-  margin: 100px auto;
+  min-height: 325px;
+  padding: 35px 10px;
+  margin: 0 auto;
 }
 
 
@@ -310,8 +311,11 @@ th, td{
   }
 }
 
-
-
+/* ----------Contact page----------- */
+.contact {
+  margin: 0 auto;
+  max-width: 240px;
+}
 
 /* ----------Media queries---------- */
 
@@ -358,28 +362,33 @@ th, td{
 }
 
 @media all and (max-width: 768px) {
-  .page-header {
-    
-  }
-
   /* dropdown menu  */
-  .dropdown-menu__icon {
-    display: block;
-    margin: 8px 15px 0 auto;
-  }
-  .nav-list {
+  .dropdown {
     position: relative;
     display: inline-block;
+  }
+  .dropdown-menu__icon {
+    display: block;
+    margin: 5px 15px;
+    position: absolute;
+    right: 0;
+  }
+  .dropdown-menu__icon:hover {
+    cursor: pointer;
   }
   .dropdown-content {
     display: none;
     position: absolute;
+    margin: 0;
     right: 10px;
+    top: 35px;
     z-index: 1;
     min-width: 120px;
-    background-color: rgb(143, 193, 227, 0.30); /* var(--secondary-txt-color) */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: white;/*var(--secondary-txt-color); /* rgb(143, 193, 227, 0.30); */
   }
-  .nav-list:hover .dropdown-content {
+  .dropdown:hover .dropdown-content,
+    .dropdown-content li {
     display: block;
   }
 
@@ -396,6 +405,7 @@ th, td{
   }
 
 }
+
 @media all and (max-width: 1024px) {
   body {
     margin: 0;
