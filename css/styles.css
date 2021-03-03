@@ -367,7 +367,7 @@ td {
   }
 }
 
-/* ----------Contact page----------- */
+/* ----------Contact page---------- */
 .contact {
   margin: 0 auto;
   max-width: 240px;
@@ -428,7 +428,7 @@ td {
 }
 
 @media all and (max-width: 768px) {
-  /* dropdown menu  */
+  /* ----------dropdown menu---------- */
   .dropdown {
     position: relative;
     display: inline-block;
@@ -452,7 +452,7 @@ td {
     right: 10px;
     top: 35px;
     z-index: 1;
-    min-width: 120px;
+    min-width: 130px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     background-color: white; /* var(--secondary-txt-color); /* rgb(143, 193, 227, 0.30); */
   }
@@ -460,6 +460,7 @@ td {
   .dropdown:hover .dropdown-content,
   .dropdown-content li {
     display: block;
+    padding: 8px 4px;
   }
 
   /* Main content grid */
