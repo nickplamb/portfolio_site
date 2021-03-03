@@ -13,7 +13,7 @@ Link color: #5085A5
 Button background: #8FC1E3
 Background-color: #F7F9FB
 
-------Font-Familys------
+------Font-Families------
 *Headlines and links*
 font-family: 'Proza Libre', sans-serif;
 ***Content***
@@ -231,7 +231,7 @@ li a::after {
 
 li a::before {
   content: '{';
-  left: 0px;
+  left: 0;
   -webkit-transform: translateX(10px);
   -ms-transform: translateX(10px);
   transform: translateX(10px);
@@ -239,7 +239,7 @@ li a::before {
 
 li a::after {
   content: '}';
-  right: 0px;
+  right: 0;
   -webkit-transform: translateX(-10px);
   -ms-transform: translateX(-10px);
   transform: translateX(-10px);
@@ -300,12 +300,18 @@ li a:hover::after {
 }
 
 /* --------------About me page--------------------- */
-p.about-me-content {
+.about-me__content {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+p.about-me__item {
   text-align: justify;
+  line-height: 1.7;
 }
 
 .skills-table {
-  margin: auto;
+  margin: 40px auto;
 }
 
 th,
@@ -319,9 +325,8 @@ td {
   margin: 0 auto;
 }
 
-.berlin-illustration-container {
-  width: 700px;
-  margin: 0 auto;
+.berlin-illustration {
+  max-width: 100%;
 }
 
 /* Animation */
@@ -516,7 +521,7 @@ td {
   }
 }
 
-/* ----------Contact page----------- */
+/* ----------Contact page---------- */
 .contact {
   margin: 0 auto;
   max-width: 240px;
@@ -579,7 +584,7 @@ td {
 }
 
 @media all and (max-width: 768px) {
-  /* dropdown menu  */
+  /* ----------dropdown menu---------- */
   .dropdown {
     position: relative;
     display: inline-block;
@@ -603,7 +608,7 @@ td {
     right: 10px;
     top: 35px;
     z-index: 1;
-    min-width: 120px;
+    min-width: 130px;
     -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     background-color: white; /* var(--secondary-txt-color); /* rgb(143, 193, 227, 0.30); */
@@ -612,6 +617,7 @@ td {
   .dropdown:hover .dropdown-content,
   .dropdown-content li {
     display: block;
+    padding: 8px 4px;
   }
 
   /* Main content grid */
@@ -626,6 +632,10 @@ td {
   .grid__item:first-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
+  }
+
+  .about-me__content {
+    max-width: 80%;
   }
 }
 
