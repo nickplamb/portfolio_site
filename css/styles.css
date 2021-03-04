@@ -4,9 +4,9 @@ tertiary color: #687864
 Font color: #31708E
 Link color: #5085A5
 Button background: #8FC1E3
-Background-color: #F7F9FB
+Background-color:  #fff  changed from #F7F9FB
 
-------Font-Familys------
+------Font-Families------
 *Headlines and links*
 font-family: 'Proza Libre', sans-serif;
 ***Content***
@@ -19,7 +19,7 @@ font-family: 'Roboto Slab', serif;
   --tertiary-color: #687864;
   --btn-bg-color: #8fc1e3;
   --btn-txt-color: #fff;
-  --bg-color: #f7f9fb;
+  --bg-color: #fff;
   --primary-font-family: 'Roboto Slab', serif;
   --secondary-font-family: 'Proza Libre', sans-serif;
 }
@@ -212,18 +212,26 @@ li a:hover::after {
 /* --------------Home page--------------------- */
 
 /* ---Main section--- */
-.profile__portrait {
-  width: 250px;
-  float: left;
-  margin-right: 40px;
-  border-radius: 50%;
-}
 
 .profile {
+  display: flex;
+  flex-flow: row wrap;
   max-width: 700px;
   min-height: 325px;
   padding: 35px 10px;
   margin: 0 auto;
+  justify-content: space-around;
+}
+
+.profile__portrait {
+  max-width: 250px;
+  border-radius: 50%;
+}
+
+.profile__item {
+  flex: 1 1 25%;
+  min-width: 260px;
+  padding: 5px;
 }
 
 /* --------------About me page--------------------- */
@@ -326,9 +334,11 @@ td {
   animation: 10s sun-pulse infinite normal linear;
 }
 
+/* --------------End About Me-------------- */
+
 /* --------------My Projects page--------------------- */
 
-/* Start gridd fallback */
+/* Start grid fallback */
 .grid__item {
   display: inline-block;
   width: 32%;
