@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nicholas Lamb - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32" />
+  <meta name="description" content="A web development portfolio site for Nicholas Lamb.">
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <!-- Styling -->
+  <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/styles.production.css">
+</head>
+
+<body>
+<!-- Header -->
+  <header class="page-header">
+    <img src="img/nicholas_lamb_logo.svg" alt="My name, Nicholas Lamb" class="page-header__item">
+
+<!-- Navigation links -->
+    <nav class="main-nav page-header__item">
+      <div role="presentation" class="dropdown">
+        <img src="img/hamburger_menu_icon.svg" alt="Hidden Manu Icon" class="dropdown-menu__icon">
+        <ul role="menubar" class="nav-list dropdown-content">
+          <li role="presentation">
+            <a href="index.html" role="menuitem" class="nav-list__item nav-list__item--active">Home</a>
+          </li>
+          <li role="presentation">
+            <a href="about.html" role="menuitem" class="nav-list__item">About Me</a>
+          </li>
+          <li role="presentation">
+            <a href="work.html" role="menuitem" class="nav-list__item">My Projects</a>
+          </li>
+          <li role="presentation">
+            <a href="contact.html" role="menuitem" class="nav-list__item">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<!-- Main content -->
+  <main>
+    <div class="profile">
+      <div class="profile__item">
+        <img src="img/nicholas_lamb_photo.JPG" class="profile__portrait" alt="A photo of me">
+      </div>
+      <div class="profile__item">
+        <h1>Hello World!</h1>
+        <p>My name is Nicholas Lamb.
+          <br>I am a <span>&lt;web&gt;</span> developer from The United States
+        </p>
+        <p><a href="https://github.com/nickplamb">Check out some of my code</a></p>
+      </div>
+    </div>
+  </main>
+
+<!-- Footer -->
+  <footer class="page-footer">
+    <p>Find me on</p>
+    <div class="social-media">
+      <a href="https://github.com/nickplamb" target="_blank">
+        <img src="img/iconfinder_github.svg" class="social-icons" alt="Github">
+      </a>
+      <!-- TODO add another social platform link here -->
+      <a href="#" target="_blank">
+        <img src="img/iconfinder_twitter.svg" class="social-icons" alt="Twitter">
+      </a>
+      <a href="https://www.linkedin.com/in/nicholas-p-lamb/" target="_blank">
+        <img src="img/iconfinder_linkedin.svg"  class="social-icons" alt="LinkedIn">
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/tota11y.min.js"></script>
+</body>
+</html>
