@@ -55,6 +55,7 @@
         <p>An App for viewing information on different chicken breeds to help in picking out your own backyard flock. Sort breeds by main purpose and
           APA class, and view more detailed information about each breed. Users can also add breeds to their favorites list and update their profile
           information.</p>
+        <p>Tech used: React, React-bootstrap, Redux, React-Router, Axios, Lodash, Prop-types, Sass.</p>
         <a href="https://github.com/nickplamb/chicken_picker_react_client" target="_blank">See project on GitHub</a><br />
         <!-- <a href="https://chicken-picker-react.netlify.app/" target="_blank">See the live app</a> -->
         <img src="img/chicken_picker_react_screenshot.png" alt="A screenshot of my Chicken Picker React client." class="project-screenshot">
@@ -64,6 +65,7 @@
         <h3>Chicken Picker Angular Client</h3>
         <p>An app for viewing information about different chicken breeds to help you pick out your backyard flock. This is a slimmed down version of
           my Chicken Picker React client built in Angular using the same API.</p>
+        <p>Tech used: Angular, Typescript, RxJS, Typedoc, Angular Material Design.</p>
         <a href="https://github.com/nickplamb/chicken_picker_angular_client" target="_blank">See project on GitHub</a><br />
         <a href="https://nickplamb.github.io/chicken_picker_angular_client/" target="_blank">See the live app</a>
         <img src="img/chicken_picker_angular_screenshot.png" alt="A screenshot of my Chicken Picker Angular client." class="project-screenshot">
@@ -71,8 +73,10 @@
       <!-- chicken picker api-->
       <div class="grid__item">
         <h3>Chicken Picker API</h3>
-        <p>A RESTful API built in Express with a MongoDB database. This API uses JWTs for authentication. The server is hosted on Heroku with the
-          database on MongoDB Atlas.</p>
+        <p>A RESTful API built in Express with a MongoDB database. The server is hosted on Heroku with the
+          database on MongoDB Atlas. There are some query helpers, methods, and statics on the models to help with DB queries, initial login
+          authentication, and JWTs for authorization.</p>
+        <p>Tech Used: Express.js, Mongoose, MongoDB, Passport, Bcrypt, Morgan, Jsonwebtoken, Jsdoc.</p>
         <a href="https://github.com/nickplamb/Chickens_api" target="_blank">See API on GitHub</a><br />
         <a href="https://github.com/nickplamb/chat_app_react_native" target="_blank">See project on GitHub</a>
       </div>
@@ -107,6 +111,7 @@
         <h3>Chat App</h3>
         <p>A React Native chat messaging app with real time data using webSockets with Firebase. The app features the ability to take photos from the
           app, send photos from the users library, and send the users current location.</p>
+        <p>Tech used: React Native, Gifted Chat, AsyncStorage, Firebase, Netinfo, Expo, Android SDK.</p>
         <a href="https://github.com/nickplamb/chat_app_react_native" target="_blank">See project on GitHub</a>
         <img src="img/full_chat_app_demo.gif" alt="A screen recording of my Chat app in action." class="project-screenshot">
       </div>
@@ -116,6 +121,10 @@
         <p>An Arduino project to log the temperature and humidity inside and outside my chicken coop. It is solar powered and POSTs the data to a
           simple PHP script and MySQL database on a home server. The script will also send the data to Thingspeak and can be configured to send me a
           text message if the door to the coop is unlocked at a specified time.</p>
+        <p>I designed, assembled, and soldered the circuits together myself. Power managment and requirments were my biggest hurdle for this project.
+          I did not have a multimeter sensitive enough to read the current draw well enough so I had to use a bunch of math and guesstimates to make
+          sure I had enough power for this to run indefinitely.</p>
+        <p>Tech used: PHP, C++/Arduino, MySQL, ESP8266, DHT22 sensors, solar charging system, various electronic parts.</p>
         <a href="https://github.com/nickplamb/Coop_logger" target="_blank">See project on GitHub</a><br />
         <a href="https://thingspeak.com/channels/1123315" target="_blank">See the live data on Thingspeak</a>
       </div>
