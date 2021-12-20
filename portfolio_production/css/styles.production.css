@@ -539,6 +539,13 @@ td {
   } */
 }
 
+.project-screenshot {
+  display: block;
+  max-width: 100%;
+  max-height: 500px;
+  margin: 10px auto 0 auto;
+}
+
 /* ----------Contact page---------- */
 .contact {
   margin: 0 auto;
