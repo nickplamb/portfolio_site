@@ -3,3 +3,5 @@
 extra_images/
 
 node_modules/
+.parcel-cache/
+dist/
