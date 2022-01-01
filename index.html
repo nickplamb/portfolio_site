@@ -16,237 +16,164 @@
   <!-- <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&family=Roboto+Slab&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
   <!-- Styling -->
-  <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
-  <link rel="stylesheet" type="text/css" href="css/styles.production.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.scss">
+  <!-- <link rel="stylesheet" type="text/css" href="css/styles.production.css"> -->
 </head>
 
 <body>
   <!-- Header -->
-  <header class="page-header">
-    <h1>NICHOLAS LAMB</h1>
+  <header class="page-header" id="navbar">
+    <a href="#">
+      <h1>NICHOLAS LAMB</h1>
+    </a>
     <!-- <img src="img/nicholas_lamb_logo.svg" alt="My name, Nicholas Lamb" class="page-header__item"> -->
 
     <!-- Navigation links -->
     <nav class="main-nav page-header__item">
-      <!-- <div role="presentation" class="dropdown">
+      <div role="presentation" class="dropdown">
         <img src="img/hamburger_menu_icon.svg" alt="Hidden Menu Icon" class="dropdown-menu__icon">
         <ul role="menubar" class="nav-list dropdown-content">
           <li role="presentation">
-            <a href="index.html" role="menuitem" class="nav-list__item nav-list__item--active">Home</a>
+            <a href="#" role="menuitem" class="nav-list__item nav-list__item--active">Home</a>
           </li>
           <li role="presentation">
-            <a href="about.html" role="menuitem" class="nav-list__item">About Me</a>
+            <a href="#about" role="menuitem" class="nav-list__item">About</a>
           </li>
           <li role="presentation">
-            <a href="work.html" role="menuitem" class="nav-list__item">My Projects</a>
+            <a href="#web-development" role="menuitem" class="nav-list__item">Web Dev</a>
           </li>
           <li role="presentation">
-            <a href="contact.html" role="menuitem" class="nav-list__item">Contact</a>
+            <a href="#projects" role="menuitem" class="nav-list__item">Projects</a>
+          </li>
+          <li role="presentation">
+            <a href="files/nicholas_lamb_resume.pdf" class="nav-list__item" download>Resume</a>
+          </li>
+          <li role="presentation">
+            <a href="#contact-me" role="menuitem" class="nav-list__item">Contact</a>
           </li>
         </ul>
-      </div> -->
+      </div>
     </nav>
   </header>
 
   <!-- Main content -->
   <main>
-    <section class="profile">
-      <div class="profile__item">
-        <img src="img/headshot.jpg" class="profile__portrait" alt="A photo of me">
-      </div>
-      <div class="profile__item">
-        <h2>Hello World!</h2>
-        <p>My name is Nicholas Lamb.
-          <br>I am a <span>&lt;web&gt;</span> developer from The United States
-        </p>
-        <p><a href="https://github.com/nickplamb">Check out some of my code</a></p>
-      </div>
-    </section>
-    <section class="about-me__content">
-      <h2>A Little About Me.</h2>
-      <p class="about-me__item">
-        I am an aspiring software developer. I have always been interested in code but life has taken me away from that path until now. I have decided
-        to turn my hobby and passion into a career so I can continue to support my wonderful wife and our son Oren. I have two very annoying cats who
-        I love dearly and 3 chickens who very graciously give us eggs to eat.
-      </p>
-      <p class="about-me__item">
-        We move out of San Francisco in 2017 so we could fulfill my wifes life long dream of hiking the Appalachian Trail. After 7 months of hiking
-        and a cross country road trip to visit friends and family we landed here in Columbus to begin the next leg of our journey.
-      </p>
-      <p class="about-me__item">
-        I enjoy wood working, tinkering, learning about gardening(the actual gardening is not going very well), and learning in general. I
-        have created a couple of Arduino projects including a <a href="https://github.com/nickplamb/Coop_logger">temperature and humidity logger</a>
-        for my chicken coop and a Minute To Win It style <a href="https://github.com/nickplamb/MTWI_nano">countdown timer</a> with LCD screen and
-        buzzer.
-      </p>
-      <p class="about-me__item">
-        I hope to create many more projects in the future such as a network of temperature sensors around my house, some house plant soil moisture
-        sensors, and a thumb print scanner to open our garage and log entry. I want to continue learning Python and create some of these projects
-        using CircuitPython. I hope to some day have a 3D printer and/or a laser cutter that my wife and I can use to make all kinds of cool things
-        and
-        maybe make a side business out of it. I also hope to get back into brewing beer and maybe making some hard cider too.
-      </p>
-      <br>
-      <div class="resume-download">
-        <a href="files/nicholas_lamb_resume.pdf" class="button" download>Download my Resume</a>
+    <section class="profile" id="intro">
+      <div class="section-content">
+        <div class="profile__item">
+          <img src="img/headshot.jpg" class="profile__portrait" alt="A photo of me">
+        </div>
+        <div class="profile__item">
+          <h2>HELLO</h2>
+          <p>My name is Nicholas Lamb.
+            <br>I am a <span>&lt;web&gt;</span> developer from The United States
+          </p>
+          <p><a href="https://github.com/nickplamb">Check out my Github</a></p>
+        </div>
       </div>
     </section>
-    <section class="skills-section">
-      <h2>My Skills</h2>
-      <p>
-        HTML,
-        CSS,
-        Sass,
-        Javascript,
-        Typescript,
-        React,
-        Angular,
-        C++/Arduino,
-        Linux/cl,
-        Laravel,
-        PHP,
-        Python,
-        Fatherhood,
-        Woodworking,
-        Chicken Farming
-      </p>
-    </section>
-    <section>
-      <h2>My Work</h2>
-      <div class="grid">
-        <!--Chicken picker react-->
-        <div class="grid__item">
-          <h3>Chicken Picker React Client</h3>
-          <p>An App for viewing information on different chicken breeds to help in picking out your own backyard flock. Sort breeds by main purpose
+    <section class="about-me__container" id="about">
+      <div class="section-content">
+
+        <div class="about-me__content reverse-colors">
+          <h2>A Little About Me.</h2>
+          <p class="about-me__item">
+            I am an aspiring software developer. I have always been interested in code but life has taken me away from that path until now. I have
+            decided
+            to turn my hobby and passion into a career so I can continue to support my wonderful wife and our son Oren. I have two very annoying cats
+            who
+            I love dearly and 3 chickens who very graciously give us eggs to eat.
+          </p>
+          <p class="about-me__item">
+            We move out of San Francisco in 2017 so we could fulfill my wifes life long dream of hiking the Appalachian Trail. After 7 months of
+            hiking
+            and a cross country road trip to visit friends and family we landed here in Columbus to begin the next leg of our journey.
+          </p>
+          <p class="about-me__item">
+            I enjoy wood working, tinkering, learning about gardening(the actual gardening is not going very well), and learning in general. I
+            have created a couple of Arduino projects including a <a href="https://github.com/nickplamb/Coop_logger">temperature and humidity
+              logger</a>
+            for my chicken coop and a Minute To Win It style <a href="https://github.com/nickplamb/MTWI_nano">countdown timer</a> with LCD screen and
+            buzzer.
+          </p>
+          <p class="about-me__item">
+            I hope to create many more projects in the future such as a network of temperature sensors around my house, some house plant soil moisture
+            sensors, and a thumb print scanner to open our garage and log entry. I want to continue learning Python and create some of these projects
+            using CircuitPython. I hope to some day have a 3D printer and/or a laser cutter that my wife and I can use to make all kinds of cool
+            things
             and
-            APA class, and view more detailed information about each breed. Users can also add breeds to their favorites list and update their profile
-            information.</p>
-          <p>Tech used: React, React-bootstrap, Redux, React-Router, Axios, Lodash, Prop-types, Sass.</p>
-          <a href="https://github.com/nickplamb/chicken_picker_react_client" target="_blank">See project on GitHub</a><br />
-          <!-- <a href="https://chicken-picker-react.netlify.app/" target="_blank">See the live app</a> -->
-          <img src="img/chicken_picker_react_screenshot.png" alt="A screenshot of my Chicken Picker React client." class="project-screenshot">
+            maybe make a side business out of it. I also hope to get back into brewing beer and maybe making some hard cider too.
+          </p>
+          <br>
+          <div class="resume-download">
+            <a href="files/nicholas_lamb_resume.pdf" class="button" download>Download my Resume</a>
+          </div>
         </div>
-        <!--chicken picker angular-->
-        <div class="grid__item">
-          <h3>Chicken Picker Angular Client</h3>
-          <p>An app for viewing information about different chicken breeds to help you pick out your backyard flock. This is a slimmed down version of
-            my Chicken Picker React client built in Angular using the same API.</p>
-          <p>Tech used: Angular, Typescript, RxJS, Typedoc, Angular Material Design.</p>
-          <a href="https://github.com/nickplamb/chicken_picker_angular_client" target="_blank">See project on GitHub</a><br />
-          <a href="https://nickplamb.github.io/chicken_picker_angular_client/" target="_blank">See the live app</a>
-          <img src="img/chicken_picker_angular_screenshot.png" alt="A screenshot of my Chicken Picker Angular client." class="project-screenshot">
-        </div>
-        <!-- chicken picker api-->
-        <div class="grid__item">
-          <h3>Chicken Picker API</h3>
-          <p>A RESTful API built in Express with a MongoDB database. The server is hosted on Heroku with the
-            database on MongoDB Atlas. There are some query helpers, methods, and statics on the models to help with DB queries, initial login
-            authentication, and JWTs for authorization.</p>
-          <p>Tech Used: Express.js, Mongoose, MongoDB, Passport, Bcrypt, Morgan, Jsonwebtoken, Jsdoc.</p>
-          <a href="https://github.com/nickplamb/Chickens_api" target="_blank">See API on GitHub</a><br />
-          <a href="https://github.com/nickplamb/chat_app_react_native" target="_blank">See project on GitHub</a>
-        </div>
-        <!--Trivia App-->
-        <div class="grid__item">
-          <h3>Trivia App</h3>
-          <p>A fun app for playing trivia. The app uses vanilla JS, HTML, and CSS to pull trivia questions from the <a href="https://opentdb.com/"
-              target="_blank">Open Trivia DB</a> and display them as a list of cards that flip over to reveal the correct answer. Users can choose the
-            category, difficulty, type, and number of questions they would like to answer. I would like to add a DB to this App to allow users to
-            login
-            and keep track of their scores and host a scoreboard of all users.</p>
-          <p>In building this app I learned DOM manipulation, IIFEs, promises, AJAX, polyfills, CSS animations, modals, and Bootstrap.</p>
-          <a href="https://github.com/nickplamb/trivia-app" target="_blank">See project on GitHub</a><br />
-          <a href="https://www.trivia.nickplamb.com/" target="_blank">See the live app</a>
-          <img src="img/trivia_app_screenshot.png" alt="A screenshot of my Trivia app." class="project-screenshot">
-        </div>
-        <!--Meet App-->
-        <div class="grid__item">
-          <h3>Meet App</h3>
-          <p>An Progressive Web App with offline capabilities for viewing meet-ups pulled from the Google Calendar API. The App allows users to filter
-            by city and number of events and also displays a chart of meetings by subject and a graph of meetings by city. Meet App was created with
-            Create React App and has a 100% testing coverage with unit, integration, acceptance, and end-to-end tests. Jest is used as a testing
-            framework with Enzyme, Cucumber, and Puppeteer integrations. Serverless functions hosted on AWS Lambda are used for authenticating the
-            users
-            Google account.</p>
-          <p>In building this app I learned about serverless functions, OAuth, CRA, TDD and BDD, Gherkin, PWAs, OOP class inheritance, and performance
-            monitoring.</p>
-          <a href="https://github.com/nickplamb/meet-app" target="_blank">See project on GitHub</a><br />
-          <a href="https://nickplamb.github.io/meet-app/" target="_blank">See the live app</a>
-          <img src="img/meet_app_screenshot.png" alt="A screenshot of my Meet app." class="project-screenshot">
-        </div>
-        <!--Chat App-->
-        <div class="grid__item">
-          <h3>Chat App</h3>
-          <p>A React Native chat messaging app with real time data using webSockets with Firebase. The app features the ability to take photos from
-            the
-            app, send photos from the users library, and send the users current location.</p>
-          <p>Tech used: React Native, Gifted Chat, AsyncStorage, Firebase, Netinfo, Expo, Android SDK.</p>
-          <a href="https://github.com/nickplamb/chat_app_react_native" target="_blank">See project on GitHub</a>
-          <img src="img/full_chat_app_demo.gif" alt="A screen recording of my Chat app in action." class="project-screenshot">
-        </div>
-        <!-- coop data logger-->
-        <div class="grid__item">
-          <h3>Chicken Coop Data Logger</h3>
-          <p>An Arduino project to log the temperature and humidity inside and outside my chicken coop. It is solar powered and POSTs the data to a
-            simple PHP script and MySQL database on a home server. The script will also send the data to Thingspeak and can be configured to send me a
-            text message if the door to the coop is unlocked at a specified time.</p>
-          <p>I designed, assembled, and soldered the circuits together myself. Power managment and requirments were my biggest hurdle for this
-            project.
-            I did not have a multimeter sensitive enough to read the current draw well enough so I had to use a bunch of math and guesstimates to make
-            sure I had enough power for this to run indefinitely.</p>
-          <p>Tech used: PHP, C++/Arduino, MySQL, ESP8266, DHT22 sensors, solar charging system, various electronic parts.</p>
-          <a href="https://github.com/nickplamb/Coop_logger" target="_blank">See project on GitHub</a><br />
-          <a href="https://thingspeak.com/channels/1123315" target="_blank">See the live data on Thingspeak</a>
-        </div>
-        <!--MTWI timer-->
-        <div class="grid__item">
-          <h3>Minute To Win It game timer</h3>
-          <p>This is a simple Arduino based timer with a buzzer and LCD screen for timing Minute To Win It style games. It was created for my wife and
-            sister in law to use during their summer day camps with kids.</p>
-          <a href="https://github.com/nickplamb/MTWI_nano" target="_blank">See project on GitHub</a>
-        </div>
-        <!-- rising sun Farms -->
-        <!-- <div class="grid__item">
-          <h3>Rising Sun Farms data site</h3>
-          <p>A Laravel based website I created to allow me to submit data about my chickens, their egg production, and other animals we have, past and
-            present. It stores data such as name, breed, and birth/hatch date of the animals as well as egg data such as the day it was layed and it
-            weight</p>
-          <a href="https://github.com/nickplamb/risingsunfarms" target="_blank">See project on GitHub</a>
-        </div> -->
       </div>
     </section>
-    <section class="contact">
-      <h2><a href="mailto:nickplamb@gmail.com">Contact Me</a></h2>
-      <p>
-        Nicholas Lamb<br>
-        85 Chaucer Ct<br>
-        Worthington Ohio, 43085<br>
-      </p>
-      <p>
-        Tel: <a href="tel:+16192285278" aria-label="My telephone number">1(619)228-5278</a><br>
-        Skype: <a href="skype:live:nickplamb" aria-label="My skype user name">live:nickplamb</a><br>
-        E-mail: <a href="mailto:nickplamb@gmail.com" aria-label="My email address">nickplamb@gmail.com</a>
-      </p>
-      <br>
-      <!-- <form action="#" method="post">
-        <label class="contact-form-label" for="contact-name">Name</label><br>
-        <input type="text" id="contact-name" required>
+    <section class="skills-section" id="web-development">
+      <div class="section-content">
+        <h2>Web Development</h2>
+        <p>
+          HTML,
+          CSS,
+          Sass,
+          Javascript,
+          Typescript,
+          React,
+          Angular,
+          C++/Arduino,
+          Linux/cl,
+          Laravel,
+          PHP,
+          Python,
+          Fatherhood,
+          Woodworking,
+          Chicken Farming
+        </p>
+      </div>
+    </section>
+    <section class="projects-section" id="projects">
+      <div class="section-content">
+        <h2>Projects</h2>
+        <div id="projectCardList" class="project-card__list">
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact-me">
+      <div class="section-content">
+        <h2><a href="mailto:nickplamb@gmail.com">Contact Me</a></h2>
+        <p>
+          Nicholas Lamb<br>
+          85 Chaucer Ct<br>
+          Worthington Ohio, 43085<br>
+        </p>
+        <p>
+          Tel: <a href="tel:+16192285278" aria-label="My telephone number">1(619)228-5278</a><br>
+          Skype: <a href="skype:live:nickplamb" aria-label="My skype user name">live:nickplamb</a><br>
+          E-mail: <a href="mailto:nickplamb@gmail.com" aria-label="My email address">nickplamb@gmail.com</a>
+        </p>
         <br>
-
-        <label class="contact-form-label" for="contact-email">E-mail: </label><br>
-        <input type="email" id="contact-email" required>
-        <br>
-
-        <label class="contact-form-label" for="contact-telephone">Telephone: </label><br>
-        <input type="tel" id="contact-telephone">
-        <br>
-
-        <label class="contact-form-label" for="contact-message">Message: </label><br>
-        <textarea maxlength="240" id="contact-message" required></textarea>
-        <p>Max 240 characters</p>
-
-        <button type="submit" name="contact-form-submit">Send message</button>
-      </form> -->
+        <!-- <form action="#" method="post">
+          <label class="contact-form-label" for="contact-name">Name</label><br>
+          <input type="text" id="contact-name" required>
+          <br>
+  
+          <label class="contact-form-label" for="contact-email">E-mail: </label><br>
+          <input type="email" id="contact-email" required>
+          <br>
+  
+          <label class="contact-form-label" for="contact-telephone">Telephone: </label><br>
+          <input type="tel" id="contact-telephone">
+          <br>
+  
+          <label class="contact-form-label" for="contact-message">Message: </label><br>
+          <textarea maxlength="240" id="contact-message" required></textarea>
+          <p>Max 240 characters</p>
+  
+          <button type="submit" name="contact-form-submit">Send message</button>
+        </form> -->
+      </div>
     </section>
   </main>
 
@@ -266,6 +193,7 @@
       </a>
     </div>
   </footer>
+  <script src="js/script.js" type="module"></script>
   <!-- <script src="js/tota11y.min.js"></script> -->
 </body>
 
