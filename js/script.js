@@ -21,7 +21,7 @@ let projects = [
     tech: [
       'React', 'React-Bootstrap', 'Redux', 'React-Router', 'Axios', 'Lodash', 'Prop-types', 'Sass'
     ],
-    screenshotUrl: require('../img/chicken_picker_angular_screenshot.png'),
+    screenshotUrl: require('../img/chicken_picker_react_screenshot.png'),
     screenshotAltText: 'A screenshot of my Chicken Picker Angular client.',
     livelink: null,
     githubLink: 'https://github.com/nickplamb/chicken_picker_react_client'
