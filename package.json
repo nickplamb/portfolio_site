@@ -1,4 +1,12 @@
 {
+  "name": "nicholas_lamb_portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio site to display web development work by Nicholas Lamb",
+  "default": "index.html",
+  "scripts": {
+    "dev": "parcel index.html react-client-case-study.html",
+    "build": "rm -rf dist && parcel build index.html react-client-case-study.html"
+  },
   "browserslist": [
     "last 2 version",
     ">0.2%",
@@ -10,5 +18,15 @@
     "parcel": "^2.0.1",
     "postcss-css-variables": "^0.18.0",
     "postcss-preset-env": "^7.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickplamb/portfolio_site.git"
+  },
+  "author": "Nicholas Lamb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickplamb/portfolio_site/issues"
+  },
+  "homepage": "https://github.com/nickplamb/portfolio_site#readme"
 }
