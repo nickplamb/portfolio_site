@@ -70,7 +70,7 @@ main {
   margin-top: 110px;
 }
 
-/* ---Links--- */
+/* --------Links-------- */
 a {
   color: var(--secondary-font-color);
   text-decoration: none;
@@ -146,6 +146,13 @@ button:focus,
 
 .page-header__item {
   flex: 0 1 50px;
+}
+
+.site-logo{
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
 }
 
 img.page-header__item {
@@ -290,7 +297,7 @@ p.about-me__item {
 
 .projects-section {
   background: var(--accent-color);
-  background: radial-gradient(circle, var(--accent-color) 30%, var(--bg-color) 100%);
+  background: linear-gradient(var(--bg-color) 10%, grey 100%);
   padding: 30px 0;
 }
 
