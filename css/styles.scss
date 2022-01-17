@@ -24,6 +24,7 @@ font-family: 'Roboto Slab', serif;
   --bg-color: #fff;
   --primary-font-family: 'Montserrat', sans-serif;
   --secondary-font-family: 'Oswald', sans-serif;
+  --caption-font-size: 12px;
 
   --background-image: "/img/tree_tops.jpg"
 
@@ -399,6 +400,17 @@ p.about-me__item {
 
 .reverse-colors h2 {
   color: var(--primary-font-color);
+}
+
+/*-----------Case Study Figures-------------*/
+
+figure {
+  img {
+    width: 100%;
+  }
+  figcaption {
+    font-size: var(--caption-font-size);
+  }
 }
 
 /* ----------Media queries---------- */

@@ -62,129 +62,153 @@
     <section class="case-study__intro">
       <div class="section-content">
         <h1>Case Study for Chicken Picker React Client</h1>
-        <h3>Overview</h3>
+        <h2>Overview</h2>
         <p>
-          Chicken Picker is a React Client designed for use with my Chicken Picker API. This MERN stack, Single Page Application allows users to view
-          detailed information about different chicken breeds, view more information about their classifications and general utility. Users can also
-          save breeds as their favorites and edit their profile information.
+          Chicken Picker is a single page, full-stack web application built using the MERN stack. The app is designed to help backyard chicken
+          enthusiasts choose the chicken breeds they want to raise in their flock. Users are able to create an account, update their profile
+          information, and view information about breed classification and purpose (ie. egg laying, meat, etc). Users are also able to create and
+          manage a list of favorite breeds.
         </p>
         <h3>Purpose and Context</h3>
         <p>
-          Chicken Picker was a project built for the CareerFoundry Full-Stack Immersion course. This project was used to learn and develop my
-          front-end
-          knowledge in order to expand my skills into a true full-stack skill set.
+          Chicken Picker was a personal project built during my CareerFoundry Full-Stack Immersion course. This project helped expand and demonstrate
+          my skills in full-stack Javascript development.
         </p>
+        <p>
+          Although the immersion course tasked me with creating a movie information database, I took the option of modifying the assignment to focus
+          on chicken breeds.
+        </p>
+        <p>
+          Having started my first backyard flock of egg laying chickens in spring 2020, I discovered that the backyard chicken community is in need of
+          a modern, comprehensive resource for selecting breeds for their flock. By choosing this topic, I was able to follow along with the course
+          but still create something unique, useful, and personal that I would enjoy working on after completing the course.
+        </p>
+        <figure>
+          <img src="img/chicken_picker_home_page.png" alt="The Chicken Picker Home Page">
+          <figcaption>The Chicken Picker home page.</figcaption>
+        </figure>
         <h3>Objective</h3>
         <p>
-          The true goal of this project was to master React, Redux, Parcel, and Axios. These tools and their underlying concepts (components,
-          lifecycle, state, props, API access, transpiling, etc.) will be essential in my future full-stack career. I decided to take the option of
-          straying from the course's original project content, a movie information app, and chose something that could still satisfy the underlying
-          structure of the movie app. This structure boiled down to a list of items that had at least two properties that could be shared with other
-          items in the list. Instead of Director and Genre properties, my app has industry classification and general breed utility. This way I could
-          follow along with the course and complete the rubric requirements for each task but still end up with something unique, a little quirky, and
-          personal. Most websites and resources about chicken breeds are either a little dated, not all that comprehensive, or are part of a sales
-          catalog from a hatchery. Because of this the backyard chicken community is in need of a modern and comprehensive resource for viewing and
-          ultimately selecting which breeds they would like to include in their flock. I would have liked to have had access to such a resource in my
-          search for a backyard flock.
+          The goal of this project was to gain a solid introduction to and practice using a variety of libraries and technologies used in MERN stack
+          development. The acronym MERN stands for MongoDB, Express.js, React, and Node.js which are the principal technologies used.
         </p>
       </div>
     </section>
     <section class="case-study__process">
       <div class="case-study___process-step section-content">
-        <h2>Process</h2>
-        <h3>Initial views</h3>
-        <p>I had to start somewhere working with React for the first time, so I started with some hard coded data and began building out my initial
-          components. This got me accustomed to working in components, how they nest, and their basic lifecycle methods. I was able to loop through an
-          array of items and display a separate card for each item. I later refactored this functionality into a separate component that I could reuse
-          on the profile page.
+        <h2>Approach</h2>
+        <p>
+          My server-side and client-side applications are designed to be self-standing and can be hosted independently from one another.
+        </p>
+        <h3>Server-side</h3>
+        <p>
+          The back-end for this project is a RESTful API that was built primarily using Express.JS and Node.js for the server, MongoDB for the
+          database, and Mongoose ODM to access the database. For user authentication and authorization I used Passport.js, bcrypt for salting and
+          hashing passwords, and JSON web tokens(JWT).
         </p>
         <p>
-          Once I had somewhere to display data I began using Axios to request data from my API. In order to retrieve data from
-          the API a user must login, so I built out a login form. The validation for this was very tricky and I am proud of how it turned out. I used
-          the basic structure found in a tutorial provided as a resource but had to heavily customize it for my use. I used the same structure to
-          validate the user registration form and later for the profile update form. I toyed with the idea of making the validation a reusable
-          component that I could use for all three forms but in the end I decided that the requirements for each were different enough that it was
-          simpler, and therefore quicker and less prone to bugs, if I recreated it for each form. I did, however, create a simple component used with
-          each input on all three forms to display the validation messages to the user.
-        </p>
-        <h3>Navbar and routing</h3>
-        <p>
-          Now that I had the ability to login, request data from the API, and display that data I decided it was time to start structuring the routing
-          of my app before I had too many views. Routing involves displaying a different page to the user depending on the links they press or the URL
-          they type into the address bar. In a Single Page Application such as this there is really only one page but different views are displayed on
-          it based on the logic put into the app. In order to do the routing I used the React-Router library which allowed me to easily define the
-          routes I wanted and I could also add safeguards to keep users who are not logged in from viewing pages they are not supposed to.
+          Though the API is principally about serving up data about chicken breeds, the actual chicken portion of the API is relatively simple. It
+          involves mainly reading from the database either all breeds, a few based on specific criteria, or a single breed by name.
         </p>
         <p>
-          Not only are these protected routes important to keep mischievous users away but it also makes the user experience better by ensuring that a
-          user does not accidentally navigate to a page that requires a logged in user to fetch data from the API and the page bugging out. With
-          routing added in, the user needed a way to navigate around other than typing in urls so I built out a navigation bar for the top of each
-          page. For this and other styling I used the React-Bootstrap library.
+          The user portion, however, is much more complex because of security and privacy concerns. This involves validating user inputs with the
+          Express-validator library, salting and hashing the users password, passing a JWT and checking the JWT from the client, and much more.
         </p>
-        <h3>Detail views</h3>
         <p>
-          With the basic structure of the app in place I could start to build out some of the other views. The breed details, breed purpose, breed
-          class, and user profile views were fairly straightforward to build but I did run into a few snags involving my API's data. For example,
-          there are many breeds that are great at laying eggs and that can also be raised for their meat. These breeds are commonly called
-          dual-purpose breeds. Unfortunately, the data I had listed these breeds as being for eggs and meat separately. I had to create some logic
-          that would correct this in order to easily display all similar breeds in the purpose view. Another tricky bit that was a lot of fun to
-          figure out was how to implement a way for users to add and remove a breed to their favorites list and then display this list on their
-          profile page. I went through a couple of ways to make this work but I couldn't find a way to make it work without doing what is known as
-          prop drilling. This is where a piece of data is passed from one component to a nested component and then onto another nested component, etc.
-          until it reaches the component that needs it. It wasn't until the next step where I implemented Redux to store data that I found a way to
-          make the favorites toggle work the way I wanted it to.
+          Each user can also have a list of their favorite breeds which is modeled in the database as an array of breed ids that reference the breed
+          collection. This example of a many-to-many relationship was extremely simple to implement in the non-relational database without the need
+          for a join table and made MongoDB very easy to work with. The static methods, instance methods, and query helpers that Mongoose allowed me
+          to create on both the breed and user models added a lot of flexibility in working with the database.
         </p>
-        <h3>Redux</h3>
         <p>
-          Before using Redux I was a little worried about the complexity of Redux because of the way it is often talked about but I found it to be
-          relatively easy to understand and implement. Redux is a library that allows an app to have what is known as a global state, that is data
-          that is accessible to any part of the app that needs it. I actually really enjoyed using it because it allowed me to remove a ton of clutter
-          from my code and ultimately made it cleaner and more readable. The most complicated part of it is the behind the scenes magic that happens
-          with the mapStateToProps and mapDispatchToProps functions used with the connect function. These are just completely opaque functions but
-          once I did some research and understood what was happening they were very easy to work with.
+          I used Postman to test each route as I built or modified them and to assure that the JSON data, HTTP status codes, and error messages
+          returned from the API were correct. I also used JsDoc to document the app.
         </p>
-        <h3>Filter and sort</h3>
+        <h3>Client-side</h3>
         <p>
-          The last main features to be added were the filter and sort functionality on the main view and profile page. I added these features to the
-          multi breed view I mentioned earlier and Redux really made these easy to work with. The filter functionality was not hard to implement but
-          the sorting was a little trickier. This was another feature that I really enjoyed implementing because it required a lot of researching,
-          thought, and trial and error to get just right. This is a small example of one of the most fun things about programming and was very
-          exciting when I finished it.
+          The front-end of this app is built with React, Redux, Axios, Prop-types, and Parcel to create a single page, responsive application. I used
+          React-Bootstrap and SCSS for styling.
+        </p>
+        <!-- <figure>
+          <img src="/img/react_routes.png" alt="The code for routes to home page and /login">
+          <figcaption>The routes for the root(home) and login views.</figcaption>
+        </figure> -->
+        <p>
+          This was my first time working with React and any component based library for that matter but using the components and nesting felt
+          intuitive and natural. Using seed data at first and later using Axios to request data from the API, I was able to become familiar with
+          components and their basic lifecycle methods.
+        </p>
+        <p>
+          When building out forms for the login, registration, and profile update views I faced the challenge of creating useful user friendly
+          client-side validation. I was able to use a tutorial that used the HTML Constraint Validation API but had to heavily customize the code to
+          fit my needs. I considered making the form validation a reusable component that I could use for all my forms but in the end I decided that
+          the requirements for each form were unique enough that it was quicker and less prone to bugs if I recreated it for each form. I did,
+          however, create a reusable component used on each form input to display error messages to the user.
+        </p>
+        <figure>
+          <img src="img/chicken_picker_login.png" alt="Chicken Picker login screen with validation error.">
+          <figcaption>The login screen with validation error displayed.</figcaption>
+        </figure>
+        <p>
+          Since I was building a single page application, I used the React-Router-Dom library to define the routes and views I wanted to be accessible
+          via url in the browser. I added logic in the router to prevent unauthenticated users from viewing pages they should not have access to.
+        </p>
+        <p>
+          For managing the app’s state I used Redux. I believe that Redux was probably a little overkill for a project this size, but I was interested
+          in learning how to work with it since it had a reputation of being a little complex. I found it much less daunting than I had anticipated.
+          Redux is a library that allows an app to have a global state, that is data that is accessible to any part of the app that needs it.
+        </p>
+        <p>
+          I did not begin using Redux until after the bulk of my app was already built out so I was able to appreciate it because it allowed me to
+          remove some clutter from my code making it much cleaner and more readable. This is especially true with my favorites list functionality.
+          Before Redux I struggled to find a way to make the favorites toggle work without “prop drilling”. Prop drilling is where a piece of data is
+          passed through several nested components until it reaches the component that needs it. Redux allowed the required data to be freely
+          available to my favorites toggle component without all the prop-drilling which made the code easier to work with and it should be more
+          maintainable.
+        </p>
+        <figure>
+          <img src="img/chicken_picker_breed_cards.png" alt="Breed cards">
+          <figcaption>The breed cards that are used on several pages.</figcaption>
+        </figure>
+        <p>
+          Another way in which I was challenged was due to the nature of the data I used for my API. A common way of referring to a chicken breed that
+          is good for both their eggs and their meat is to call them “dual-purpose” breeds. I wanted a user to be able to view breeds used primarily
+          for eggs, for instance, and have all of the dual-purpose breeds show up as well. I also wanted users to be able to view just dual-purpose
+          breeds. This required a little bit of tricky logic to make it work the way I wanted it to and I think it still requires a little more
+          thought.
         </p>
       </div>
     </section>
     <section class="case-study__conclusion">
       <div class="section-content">
-        <h3>Future Development</h3>
+        <h2>Future Development</h2>
+        <ul>
+          <li>
+            I want to refactor the approach I took to ensure that a user is unique. In the current version, I have restricted users from changing
+            their email address, but I want to do a little more research on best practices and handle this differently in the future.
+          </li>
+          <li>
+            I would like to crowd-source the data and collect more information about the breeds. Users should be able to update or submit a new breed.
+            I would like edits to be held for review before being published.
+          </li>
+          <li>
+            Open up the content for viewing without requiring login and add rate limiting to protect the API. Login would be required for creating
+            favorites and submitting/modifying breeds.
+          </li>
+          <li>
+            I would like to add filters to allow users to view chickens by egg color and egg quantity.
+          </li>
+          <li>
+            Improve UI/UX of the app. I would like to work with a designer to help implement a more cohesive and appealing user experience that would
+            help bring the app out of the realm of the learning and hobby project to being a useful real world app.
+          </li>
+        </ul>
+        <h2>Final Thoughts</h2>
         <p>
-          One of the biggest pain points for this project was something that was, in part, self imposed and that was working with certain aspects of
-          my
-          API. The main issues I faced was that the data I collected is not very clean. This was somewhat by design because I have intentions of
-          expanding the app to allow users to submit their own data about chicken breeds which would be held for review before being published. This
-          would allow me to crowd source more thorough data about even more chicken breeds.
-        </p>
-        <p>
-          I also wanted to make sure that each user was unique and the way I did that was to make the users email unique and unchangeable. I don't
-          think
-          this worked out well in the end. I need to do some more research to see what is the best practice for keeping unique users.
-        </p>
-        <p>
-          It is my understanding that for an app this size Redux might be a little bit overkill for state management. I think moving forward I will
-          look
-          further into React's Context API which allows data to be freely available to a component and any of its descendants. This might end up being
-          all I need for the app as it is but I will need to evaluate any further features I'd like to implement before taking such a drastic step.
-        </p>
-        <p>
-          The last thing I want to improve is the general UI/UX of the app. I would like to work with a designer to help implement a more cohesive and
-          appealing user experience that would help bring the app out of the realm of the learning and hobby project to being a useful real world app.
-        </p>
-        <h3>Final Thoughts</h3>
-        <p>
-          I really enjoyed working with React and found the flexibility of the component structure fun and challenging to work with. The puzzle
-          involved with trying to hold nested components, their props, and functionality in my mind was the kind of challenge that I enjoy and can
-          really dig my teeth into. I think this app turned out really well and I am very happy with the functionality. Building this app layed a
-          solid
-          foundation for my React skills and advanced my understanding of JavaScript.
+          I really enjoyed working with React and found the flexibility of the component structure fun and challenging to work with. I also enjoyed
+          the puzzle involved with trying to hold nested components, their props, and functionality in my mind. I think this app turned out really
+          well and I am happy with the functionality and had fun seeing all of the pieces come to life. The project gave me a solid foundation with
+          React and advanced my understanding of JavaScript.
         </p>
       </div>
     </section>
