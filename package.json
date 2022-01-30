@@ -4,8 +4,8 @@
   "description": "A portfolio site to display web development work by Nicholas Lamb",
   "default": "index.html",
   "scripts": {
-    "dev": "parcel index.html react-client-case-study.html",
-    "build": "rm -rf dist && parcel build index.html react-client-case-study.html"
+    "dev": "parcel index.html chicken-picker-case-study.html",
+    "build": "rm -rf dist && parcel build index.html chicken-picker-case-study.html"
   },
   "browserslist": [
     "last 2 version",

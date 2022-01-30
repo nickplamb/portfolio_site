@@ -2,35 +2,87 @@
  * Navbar hiding
  */
 
-let prevScrollPos = window.scrollY;
+let sectionOffsetsTop = [];
+// window.addEventListener('load', (event) => sections = document.querySelectorAll('section'));
+window.onload = () => {
+  let sections = document.querySelectorAll('section');
+  sections.forEach((section, index) => {
+    sectionOffsetsTop[index] = {
+      secName: '#' + section.id,
+      secOffset: section.offsetTop
+    }
+  });
+}
+
+// let prevScrollPos = window.scrollY;
 window.onscroll = () => {
   let currentScrollPos = window.scrollY;
+  let navItems = document.querySelectorAll('a.nav-list__item');
+  // let navbar = document.getElementById('navbar');
+  
+  // prevScrollPos > currentScrollPos ? navbar.style.top = '0'
+  // : navbar.style.top = '-98px';
+  
+  // prevScrollPos = currentScrollPos;
+  if(sectionOffsetsTop.length !== 0){
+    sectionOffsetsTop.forEach((section, index) => {
+      if(currentScrollPos >= section.secOffset && currentScrollPos < sectionOffsetsTop[index+1]?.secOffset){
+        navItems.forEach(navItem => {
+          navItem.classList.remove('nav-list__item--active')
+          if(navItem.hash === section.secName) {
+            navItem.classList.add('nav-list__item--active')
+          }
+        });
+      }
+    });
+  }
 
-  prevScrollPos > currentScrollPos ? document.getElementById('navbar').style.top = '0'
-  : document.getElementById('navbar').style.top = '-98px';
-
-  prevScrollPos = currentScrollPos;
 }
+
+
+function handleHashChange() {
+  let navItems = document.querySelectorAll('a.nav-list__item');
+  let hashLocation = window.location.hash;
+  // console.log(hashLocation)
+  let navbar = document.getElementById('navbar');
+  navbar.style.top = '0';
+
+  navItems.forEach(item => {
+    // console.log(item.hash)
+    if(item.hash === hashLocation && item.hash !== '') {
+      item.classList.add('nav-list__item--active');
+    } else {
+      // console.log('has not matched');
+      item.classList.remove('nav-list__item--active')
+    }
+  })
+}
+
+
+
+
+
 
 let projects = [
   {
     title: 'Chicken Picker React Client',
     year: '2021',
     subheader: 'With Career Foundry',
-    description: ['An App for viewing information on different chicken breeds to help in picking out your own backyard flock. Sort breeds by main purpose and APA class, and view more detailed information about each breed. Users can also add breeds to their favorites list and update their profile information.'],
+    description: ['An App for viewing information on different chicken breeds to help in picking out your own backyard flock. Sort breeds by main purpose and APA class, and view more detailed information about each breed. Users can also add breeds to their favorites list and update their profile information.', 'Check it out with the email demo@demo.com and the password demopassword'],
     tech: [
       'React', 'React-Bootstrap', 'Redux', 'React-Router', 'Axios', 'Lodash', 'Prop-types', 'Sass'
     ],
     screenshotUrl: require('../img/chicken_picker_react_screenshot.png'),
     screenshotAltText: 'A screenshot of my Chicken Picker Angular client.',
-    livelink: null,
-    githubLink: 'https://github.com/nickplamb/chicken_picker_react_client'
+    liveLink: 'https://chicken-picker-react.netlify.app/',
+    githubLink: 'https://github.com/nickplamb/chicken_picker_react_client',
+    caseStudyLink: './chicken-picker-case-study.html'
   },
   {
     title: 'Chicken Picker Angular Client',
     year: '2021',
     subheader: 'With Career Foundry',
-    description: ['An app for viewing information about different chicken breeds to help you pick out your backyard flock. This is a slimmed down version of my Chicken Picker React client built in Angular using the same API.'],
+    description: ['An app for viewing information about different chicken breeds to help you pick out your backyard flock. This is a slimmed down version of my Chicken Picker React client built in Angular using the same API.', 'Check it out with the email demo@demo.com and the password demopassword'],
     tech: [
       'Angular',
       'Typescript',
@@ -40,8 +92,9 @@ let projects = [
     ],
     screenshotUrl: require('../img/chicken_picker_angular_screenshot.png'),
     screenshotAltText: 'A screenshot of my Chicken Picker Angular client.',
-    livelink: 'https://nickplamb.github.io/chicken_picker_angular_client/',
-    githubLink: 'https://github.com/nickplamb/chicken_picker_angular_client'
+    liveLink: 'https://nickplamb.github.io/chicken_picker_angular_client/',
+    githubLink: 'https://github.com/nickplamb/chicken_picker_angular_client',
+    caseStudyLink: null
   },
   {
     title: 'Chicken Picker API',
@@ -53,8 +106,9 @@ let projects = [
     ],
     screenshotUrl: null,
     screenshotAltText: null,
-    livelink: null,
-    githubLink: 'https://github.com/nickplamb/Chickens_api'
+    liveLink: null,
+    githubLink: 'https://github.com/nickplamb/Chickens_api',
+    caseStudyLink: './chicken-picker-case-study.html'
   },
   {
     title: 'Trivia App',
@@ -66,8 +120,9 @@ let projects = [
     ],
     screenshotUrl: require('../img/trivia_app_screenshot.png'),
     screenshotAltText: 'A screenshot of my Trivia app.',
-    livelink: 'https://www.trivia.nickplamb.com/',
-    githubLink: 'https://github.com/nickplamb/trivia-app'
+    liveLink: 'https://www.trivia.nickplamb.com/',
+    githubLink: 'https://github.com/nickplamb/trivia-app',
+    caseStudyLink: null
   },
   {
     title: 'Meet App',
@@ -79,8 +134,9 @@ let projects = [
     ],
     screenshotUrl: require('../img/meet_app_screenshot.png'),
     screenshotAltText: 'A screenshot of my Meet app.',
-    livelink: 'https://nickplamb.github.io/meet-app/',
-    githubLink: 'https://github.com/nickplamb/meet-app'
+    liveLink: 'https://nickplamb.github.io/meet-app/',
+    githubLink: 'https://github.com/nickplamb/meet-app',
+    caseStudyLink: null
   },
   {
     title: 'Chat App',
@@ -92,8 +148,9 @@ let projects = [
     ],
     screenshotUrl: require('../img/chat_app_demo.webp'),
     screenshotAltText: 'A screen recording of my Chat app in action.',
-    livelink: null,
-    githubLink: 'https://github.com/nickplamb/chat_app_react_native'
+    liveLink: null,
+    githubLink: 'https://github.com/nickplamb/chat_app_react_native',
+    caseStudyLink: null
   },
   {
     title: 'Chicken Coop Data Logger',
@@ -106,8 +163,9 @@ let projects = [
     ],
     screenshotUrl: null,
     screenshotAltText: null,
-    livelink: 'https://thingspeak.com/channels/1123315',
-    githubLink: 'https://github.com/nickplamb/Coop_logger'
+    liveLink: 'https://thingspeak.com/channels/1123315',
+    githubLink: 'https://github.com/nickplamb/Coop_logger',
+    caseStudyLink: null
   },
   {
     title: 'Minute To Win It game timer',
@@ -119,8 +177,9 @@ let projects = [
     ],
     screenshotUrl: null,
     screenshotAltText: null,
-    livelink: null,
-    githubLink: 'https://github.com/nickplamb/MTWI_nano'
+    liveLink: null,
+    githubLink: 'https://github.com/nickplamb/MTWI_nano',
+    caseStudyLink: null
   },
 ]
 
@@ -137,8 +196,9 @@ function displayProjects() {
           : ''
         }
         <div class="project-card__links">
-          <a href="${project.githubLink}" target="_blank">GitHub</a>
-          ${project.livelink ? `<a href="${project.livelink}" target="_blank">live app</a>` : ''}
+          <a href="${project.githubLink}" target="_blank" class="button">GitHub</a>
+          ${project.liveLink ? `<a href="${project.liveLink}" target="_blank" class="button">Demo</a>` : ''}
+          ${project.caseStudyLink ? `<a href="${project.caseStudyLink}" class="button">Case Study</a>` : ''}
         </div>
       </div>`;
 
@@ -162,6 +222,14 @@ function displayProjects() {
 }
 
 let projectCardList = document.getElementById('projectCardList');
-console.log(displayProjects());
-
 projectCardList.innerHTML = displayProjects();
+
+window.addEventListener('hashchange', handleHashChange, false);
+
+
+// icons 
+// https://www.iconfinder.com/iconsets/font-awesome-brands-vol-1
+// html5, angular, js, linux
+
+// https://www.iconfinder.com/iconsets/logos-21
+// css3

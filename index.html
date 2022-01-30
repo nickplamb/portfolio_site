@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&family=Roboto+Slab&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <!-- Styling -->
   <link rel="stylesheet" type="text/css" href="css/styles.scss">
   <!-- <link rel="stylesheet" type="text/css" href="css/styles.production.css"> -->
@@ -26,8 +26,8 @@
 <body>
   <!-- Header -->
   <header class="page-header" id="navbar">
-    <a href="#">
-      <div class="site-logo">NICHOLAS LAMB</div>
+    <a href="#profile">
+      <div class="site-logo">_NICHOLAS LAMB</div>
     </a>
     <!-- <img src="img/nicholas_lamb_logo.svg" alt="My name, Nicholas Lamb" class="page-header__item"> -->
 
@@ -36,9 +36,9 @@
       <div role="presentation" class="dropdown">
         <img src="img/hamburger_menu_icon.svg" alt="Hidden Menu Icon" class="dropdown-menu__icon">
         <ul role="menubar" class="nav-list dropdown-content">
-          <li role="presentation">
+          <!-- <li role="presentation">
             <a href="#" role="menuitem" class="nav-list__item nav-list__item--active">Home</a>
-          </li>
+          </li> -->
           <li role="presentation">
             <a href="#about" role="menuitem" class="nav-list__item">About</a>
           </li>
@@ -49,7 +49,7 @@
             <a href="#projects" role="menuitem" class="nav-list__item">Projects</a>
           </li>
           <li role="presentation">
-            <a href="files/nicholas_lamb_resume.pdf" class="nav-list__item" download>Resume</a>
+            <a href="files/Lamb_Nicholas_resume.pdf" class="nav-list__item" download>Resume</a>
           </li>
           <li role="presentation">
             <a href="#contact-me" role="menuitem" class="nav-list__item">Contact</a>
@@ -61,139 +61,140 @@
 
   <!-- Main content -->
   <main>
-    <section class="profile" id="intro">
+    <section class="profile" id="profile">
       <div class="section-content">
-        <div class="profile__item">
+        <div class="profile__item profile-portrait__container">
           <img src="img/headshot.jpg" class="profile__portrait" alt="A photo of me">
         </div>
         <div class="profile__item">
-          <h2>HELLO</h2>
+          <h2>_ HELLO</h2>
           <p>My name is Nicholas Lamb.
             <br>I am a <span>&lt;web&gt;</span> developer from The United States
           </p>
-          <p><a href="https://github.com/nickplamb">Check out my Github</a></p>
+          <p><a href="https://github.com/nickplamb" target="_blank">Check out my Github</a></p>
         </div>
       </div>
+      <div class="divider-line"></div>
     </section>
-    <section class="about-me__container" id="about">
-      <div class="section-content">
+    <section id="about">
+      <div class="about-me__background">
 
-        <div class="about-me__content reverse-colors">
-          <h2>A Little About Me.</h2>
-          <p class="about-me__item">
-            I am an aspiring software developer. I have always been interested in code but life has taken me away from that path until now. I have
-            decided
-            to turn my hobby and passion into a career so I can continue to support my wonderful wife and our son Oren. I have two very annoying cats
-            who
-            I love dearly and 3 chickens who very graciously give us eggs to eat.
-          </p>
-          <p class="about-me__item">
-            We move out of San Francisco in 2017 so we could fulfill my wifes life long dream of hiking the Appalachian Trail. After 7 months of
-            hiking
-            and a cross country road trip to visit friends and family we landed here in Columbus to begin the next leg of our journey.
-          </p>
-          <p class="about-me__item">
-            I enjoy wood working, tinkering, learning about gardening(the actual gardening is not going very well), and learning in general. I
-            have created a couple of Arduino projects including a <a href="https://github.com/nickplamb/Coop_logger">temperature and humidity
-              logger</a>
-            for my chicken coop and a Minute To Win It style <a href="https://github.com/nickplamb/MTWI_nano">countdown timer</a> with LCD screen and
-            buzzer.
-          </p>
-          <p class="about-me__item">
-            I hope to create many more projects in the future such as a network of temperature sensors around my house, some house plant soil moisture
-            sensors, and a thumb print scanner to open our garage and log entry. I want to continue learning Python and create some of these projects
-            using CircuitPython. I hope to some day have a 3D printer and/or a laser cutter that my wife and I can use to make all kinds of cool
-            things
-            and
-            maybe make a side business out of it. I also hope to get back into brewing beer and maybe making some hard cider too.
-          </p>
-          <br>
-          <div class="resume-download">
-            <a href="files/nicholas_lamb_resume.pdf" class="button" download>Download my Resume</a>
+        <div class=" section-content">
+          <div class="about-me__content">
+            <h2>_ About Me</h2>
+            <p class="about-me__item">
+              I am an aspiring software developer. I have always been interested in code but life has taken me away from that path until now. I have
+              decided to turn my hobby and passion into a career so I can continue to support my wonderful wife and our son Oren. I have two very
+              annoying cats who I love dearly and 3 chickens who very graciously give us eggs to eat.
+            </p>
+            <p class="about-me__item">
+              We move out of San Francisco in 2017 so we could fulfill my wifes life long dream of hiking the Appalachian Trail. After 7 months of
+              hiking and a cross country road trip to visit friends and family we landed here in Columbus to begin the next leg of our journey.
+            </p>
+            <p class="about-me__item">
+              I enjoy wood working, tinkering, learning about gardening(the actual gardening is not going very well), and learning in general. I
+              have created a couple of Arduino projects including a <a href="https://github.com/nickplamb/Coop_logger" target="_blank">temperature and
+                humidity
+                logger</a> for my chicken coop and a Minute To Win It style <a href="https://github.com/nickplamb/MTWI_nano" target="_blank">countdown
+                timer</a> with
+              LCD screen and buzzer.
+            </p>
+            <p class="about-me__item">
+              I hope to create many more projects in the future such as a network of temperature sensors around my house, some house plant soil
+              moisture
+              sensors, and a thumb print scanner to open our garage and log entry. I want to continue learning Python and create some of these
+              projects
+              using CircuitPython. I hope to some day have a 3D printer and/or a laser cutter that my wife and I can use to make all kinds of cool
+              things and maybe make a side business out of it. I also hope to get back into brewing beer and maybe making some hard cider too.
+            </p>
+            <br>
+            <div class="resume-download">
+              <a href="files/Lamb_Nicholas_resume.pdf" class="button" download>Download my Resume</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section class="skills-section" id="web-development">
       <div class="section-content">
-        <h2>Web Development</h2>
+        <h2>_ Web Development</h2>
+
         <p>
           HTML,
           CSS,
-          Sass,
+          Scss,
           Javascript,
           Typescript,
           React,
           Angular,
           C++/Arduino,
-          Linux/cl,
+          Linux,
           Laravel,
           PHP,
           Python,
           Fatherhood,
           Woodworking,
-          Chicken Farming
+          Chicken raising
         </p>
       </div>
     </section>
     <section class="projects-section" id="projects">
       <div class="section-content">
-        <h2>Projects</h2>
+        <h2>_ Projects</h2>
         <div id="projectCardList" class="project-card__list">
         </div>
-      </div>
-    </section>
-    <section class="contact" id="contact-me">
-      <div class="section-content">
-        <h2><a href="mailto:nickplamb@gmail.com">Contact Me</a></h2>
-        <p>
-          Nicholas Lamb<br>
-          85 Chaucer Ct<br>
-          Worthington Ohio, 43085<br>
-        </p>
-        <p>
-          Tel: <a href="tel:+16192285278" aria-label="My telephone number">1(619)228-5278</a><br>
-          Skype: <a href="skype:live:nickplamb" aria-label="My skype user name">live:nickplamb</a><br>
-          E-mail: <a href="mailto:nickplamb@gmail.com" aria-label="My email address">nickplamb@gmail.com</a>
-        </p>
-        <br>
-        <!-- <form action="#" method="post">
-          <label class="contact-form-label" for="contact-name">Name</label><br>
-          <input type="text" id="contact-name" required>
-          <br>
-  
-          <label class="contact-form-label" for="contact-email">E-mail: </label><br>
-          <input type="email" id="contact-email" required>
-          <br>
-  
-          <label class="contact-form-label" for="contact-telephone">Telephone: </label><br>
-          <input type="tel" id="contact-telephone">
-          <br>
-  
-          <label class="contact-form-label" for="contact-message">Message: </label><br>
-          <textarea maxlength="240" id="contact-message" required></textarea>
-          <p>Max 240 characters</p>
-  
-          <button type="submit" name="contact-form-submit">Send message</button>
-        </form> -->
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="page-footer">
-    <p>Find me on</p>
-    <div class="social-media">
-      <a href="https://github.com/nickplamb" target="_blank">
-        <img src="img/iconfinder_github.svg" class="social-icons" alt="Github">
-      </a>
-      <!-- TODO add another social platform link here -->
-      <a href="#" target="_blank">
-        <img src="img/iconfinder_twitter.svg" class="social-icons" alt="Twitter">
-      </a>
-      <a href="https://www.linkedin.com/in/nicholas-p-lamb/" target="_blank">
-        <img src="img/iconfinder_linkedin.svg" class="social-icons" alt="LinkedIn">
-      </a>
+  <footer id="contact-me" class="page-footer">
+    <div class="contact-section__info footer-item">
+      <h2>_ <a href="mailto:nickplamb@gmail.com">Contact Me</a></h2>
+      <p>
+        Nicholas Lamb<br>
+        Columbus, Ohio
+      </p>
+      <p>
+        E-mail: <a href="mailto:nickplamb@gmail.com" aria-label="My email address">nickplamb@gmail.com</a>
+      </p>
+      <!-- <form action="#" method="post">
+
+    </div>
+      <label class="contact-form-label" for="contact-name">Name</label><br>
+      <input type="text" id="contact-name" required>
+      <br>
+
+      <label class="contact-form-label" for="contact-email">E-mail: </label><br>
+      <input type="email" id="contact-email" required>
+      <br>
+
+      <label class="contact-form-label" for="contact-telephone">Telephone: </label><br>
+      <input type="tel" id="contact-telephone">
+      <br>
+
+      <label class="contact-form-label" for="contact-message">Message: </label><br>
+      <textarea maxlength="240" id="contact-message" required></textarea>
+      <p>Max 240 characters</p>
+
+      <button type="submit" name="contact-form-submit">Send message</button>
+    </form> -->
+    </div>
+
+    <div class="social-media__container footer-item">
+      <h4>Find me on</h4>
+      <div class="social-media">
+        <a href="https://github.com/nickplamb" target="_blank">
+          <img src="img/iconfinder_github.svg" class="social-icons" alt="Github">
+        </a>
+        <!-- TODO add another social platform link here -->
+        <a href="#" target="_blank">
+          <img src="img/iconfinder_twitter.svg" class="social-icons" alt="Twitter">
+        </a>
+        <a href="https://www.linkedin.com/in/nicholas-p-lamb/" target="_blank">
+          <img src="img/iconfinder_linkedin.svg" class="social-icons" alt="LinkedIn">
+        </a>
+      </div>
     </div>
   </footer>
   <script src="js/script.js" type="module"></script>
