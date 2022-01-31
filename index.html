@@ -17,7 +17,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- <link href="https://fonts.googleapis.com/css2?family=Proza+Libre&family=Roboto+Slab&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/0bea3e0ec4.js" crossorigin="anonymous"></script>
   <!-- Styling -->
   <link rel="stylesheet" type="text/css" href="css/styles.scss">
   <!-- <link rel="stylesheet" type="text/css" href="css/styles.production.css"> -->
@@ -27,7 +28,7 @@
   <!-- Header -->
   <header class="page-header" id="navbar">
     <a href="#profile">
-      <div class="site-logo">_NICHOLAS LAMB</div>
+      <div class="site-logo">NICHOLAS LAMB</div>
     </a>
     <!-- <img src="img/nicholas_lamb_logo.svg" alt="My name, Nicholas Lamb" class="page-header__item"> -->
 
@@ -36,24 +37,25 @@
       <div role="presentation" class="dropdown">
         <img src="img/hamburger_menu_icon.svg" alt="Hidden Menu Icon" class="dropdown-menu__icon">
         <ul role="menubar" class="nav-list dropdown-content">
-          <!-- <li role="presentation">
-            <a href="#" role="menuitem" class="nav-list__item nav-list__item--active">Home</a>
-          </li> -->
+          <li role="presentation">
+            <a href="#profile" role="menuitem" class="nav-list__item">Home</a>
+          </li>
           <li role="presentation">
             <a href="#about" role="menuitem" class="nav-list__item">About</a>
           </li>
           <li role="presentation">
-            <a href="#web-development" role="menuitem" class="nav-list__item">Web Dev</a>
+            <a href="#tech-skills" role="menuitem" class="nav-list__item">Skills</a>
           </li>
           <li role="presentation">
             <a href="#projects" role="menuitem" class="nav-list__item">Projects</a>
           </li>
           <li role="presentation">
-            <a href="files/Lamb_Nicholas_resume.pdf" class="nav-list__item" download>Resume</a>
-          </li>
-          <li role="presentation">
             <a href="#contact-me" role="menuitem" class="nav-list__item">Contact</a>
           </li>
+          <!-- <li role="presentation">
+            <a href="files/Lamb_Nicholas_resume.pdf" class="button" download>Resume</a>
+          </li> -->
+
         </ul>
       </div>
     </nav>
@@ -68,80 +70,108 @@
         </div>
         <div class="profile__item">
           <h2>_ HELLO</h2>
-          <p>My name is Nicholas Lamb.
-            <br>I am a <span>&lt;web&gt;</span> developer from The United States
-          </p>
+          <p>I'm an aspiring web developer currently living in Columbus, Ohio with my wife and our son.</p>
+
           <p><a href="https://github.com/nickplamb" target="_blank">Check out my Github</a></p>
+          <div class="resume-download">
+            <a href="files/Lamb_Nicholas_resume.pdf" class="button" download>Download my Resume</a>
+          </div>
         </div>
       </div>
-      <div class="divider-line"></div>
+      <div class="accent-box"></div>
     </section>
-    <section id="about">
+    <section id="about" class="about-section">
       <div class="about-me__background">
 
         <div class=" section-content">
           <div class="about-me__content">
             <h2>_ About Me</h2>
-            <p class="about-me__item">
-              I am an aspiring software developer. I have always been interested in code but life has taken me away from that path until now. I have
-              decided to turn my hobby and passion into a career so I can continue to support my wonderful wife and our son Oren. I have two very
-              annoying cats who I love dearly and 3 chickens who very graciously give us eggs to eat.
-            </p>
-            <p class="about-me__item">
-              We move out of San Francisco in 2017 so we could fulfill my wifes life long dream of hiking the Appalachian Trail. After 7 months of
-              hiking and a cross country road trip to visit friends and family we landed here in Columbus to begin the next leg of our journey.
-            </p>
-            <p class="about-me__item">
-              I enjoy wood working, tinkering, learning about gardening(the actual gardening is not going very well), and learning in general. I
-              have created a couple of Arduino projects including a <a href="https://github.com/nickplamb/Coop_logger" target="_blank">temperature and
-                humidity
-                logger</a> for my chicken coop and a Minute To Win It style <a href="https://github.com/nickplamb/MTWI_nano" target="_blank">countdown
-                timer</a> with
-              LCD screen and buzzer.
-            </p>
-            <p class="about-me__item">
-              I hope to create many more projects in the future such as a network of temperature sensors around my house, some house plant soil
-              moisture
-              sensors, and a thumb print scanner to open our garage and log entry. I want to continue learning Python and create some of these
-              projects
-              using CircuitPython. I hope to some day have a 3D printer and/or a laser cutter that my wife and I can use to make all kinds of cool
-              things and maybe make a side business out of it. I also hope to get back into brewing beer and maybe making some hard cider too.
-            </p>
-            <br>
-            <div class="resume-download">
-              <a href="files/Lamb_Nicholas_resume.pdf" class="button" download>Download my Resume</a>
-            </div>
+            <p>I am an aspiring web and software developer. </p>
+            <p>I have been passionate about technology, code, and understanding the way things work for as long as I can
+              remember. For the last 7 years, I made a career as a manufacturing line operator, bottling beer in San Francisco, CA and now bottling
+              baby formula here in Columbus, OH. I have excelled in this career because of my ability to quickly understand and troubleshoot technical
+              and mechanical problems, work on a team, and take a detail-oriented approach in a highly regulated food and beverage industry. </p>
+            <p>In order to follow my passion while also better supporting my growing family, I am now pursuing a career in
+              software development. I have been interested in code since I was a kid when my dad taught me BASIC. Since then, I’ve created several
+              Arduino/C++ projects including a <a href="https://github.com/nickplamb/Coop_logger" target="_blank">temperature and humidity logger</a>
+              for my backyard chicken coop. Most recently, I completed the JS coding
+              bootcamp with CareerFoundry which allowed me to work at my own pace while also working full time.</p>
+            <p>I have an endless list of web and arduino projects I’d like to create, and not enough time to make them all
+              happen. But, I’ve always got a project going on that allows me to continue learning and helps me stay up to date on the current
+              technologies.</p>
           </div>
         </div>
       </div>
     </section>
-    <section class="skills-section" id="web-development">
+    <section class="skills-section" id="tech-skills">
       <div class="section-content">
-        <h2>_ Web Development</h2>
-
-        <p>
-          HTML,
-          CSS,
-          Scss,
-          Javascript,
-          Typescript,
-          React,
-          Angular,
-          C++/Arduino,
-          Linux,
-          Laravel,
-          PHP,
-          Python,
-          Fatherhood,
-          Woodworking,
-          Chicken raising
-        </p>
+        <h2>_ Technical Skills</h2>
+        <ul class="tech-list">
+          <li class="tech-list__wrapper">
+            <i class="fab fa-js-square tech-list__icon"></i>
+            <p>JavaScript</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <img src="img/ts-logo-512.svg" class="tech-list__icon-img"></img>
+            <p>TypeScript</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fab fa-react tech-list__icon"></i>
+            <p>React</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fab fa-html5 tech-list__icon"></i>
+            <p>HTML5</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fab fa-css3-alt tech-list__icon"></i>
+            <p>CSS3</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fab fa-sass tech-list__icon"></i>
+            <p>SASS</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fab fa-angular tech-list__icon"></i>
+            <p>Angular</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fab fa-linux tech-list__icon"></i>
+            <p>Linux</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fab fa-laravel tech-list__icon"></i>
+            <p>LaravelL</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fab fa-php tech-list__icon"></i>
+            <p>PHP</p>
+          </li>
+          <!-- <li class="tech-list__wrapper">
+            <i class="fab fa-python tech-list__icon"></i>
+            <p>Python</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fas fa-baby tech-list__icon"></i>
+            <p>Fatherhood</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fas fa-hammer tech-list__icon"></i>
+            <p>Woodworking</p>
+          </li>
+          <li class="tech-list__wrapper">
+            <i class="fas fa-egg tech-list__icon"></i>
+            <p>Raising chickens</p>
+          </li> -->
+        </ul>
       </div>
     </section>
     <section class="projects-section" id="projects">
-      <div class="section-content">
-        <h2>_ Projects</h2>
-        <div id="projectCardList" class="project-card__list">
+      <div class="projects-section__background">
+        <div class="section-content">
+          <h2>_ Projects</h2>
+          <div id="projectCardList" class="project-card__list">
+          </div>
         </div>
       </div>
     </section>
@@ -158,44 +188,27 @@
       <p>
         E-mail: <a href="mailto:nickplamb@gmail.com" aria-label="My email address">nickplamb@gmail.com</a>
       </p>
-      <!-- <form action="#" method="post">
+      <div class="resume-download">
+        <a href="files/Lamb_Nicholas_resume.pdf" class="button" download>Download my Resume</a>
+      </div>
 
-    </div>
-      <label class="contact-form-label" for="contact-name">Name</label><br>
-      <input type="text" id="contact-name" required>
-      <br>
 
-      <label class="contact-form-label" for="contact-email">E-mail: </label><br>
-      <input type="email" id="contact-email" required>
-      <br>
-
-      <label class="contact-form-label" for="contact-telephone">Telephone: </label><br>
-      <input type="tel" id="contact-telephone">
-      <br>
-
-      <label class="contact-form-label" for="contact-message">Message: </label><br>
-      <textarea maxlength="240" id="contact-message" required></textarea>
-      <p>Max 240 characters</p>
-
-      <button type="submit" name="contact-form-submit">Send message</button>
-    </form> -->
-    </div>
-
-    <div class="social-media__container footer-item">
-      <h4>Find me on</h4>
       <div class="social-media">
         <a href="https://github.com/nickplamb" target="_blank">
-          <img src="img/iconfinder_github.svg" class="social-icons" alt="Github">
+          <span class="fab fa-github social-icons"></span>
+          <!-- <img src="img/iconfinder_github.svg" class="social-icons" alt="Github"> -->
         </a>
         <!-- TODO add another social platform link here -->
-        <a href="#" target="_blank">
+        <!-- <a href="#" target="_blank">
           <img src="img/iconfinder_twitter.svg" class="social-icons" alt="Twitter">
-        </a>
+        </a> -->
         <a href="https://www.linkedin.com/in/nicholas-p-lamb/" target="_blank">
-          <img src="img/iconfinder_linkedin.svg" class="social-icons" alt="LinkedIn">
+          <span class="fab fa-linkedin social-icons"></span>
+          <!-- <img src="img/iconfinder_linkedin.svg" class="social-icons" alt="LinkedIn"> -->
         </a>
       </div>
     </div>
+
   </footer>
   <script src="js/script.js" type="module"></script>
   <!-- <script src="js/tota11y.min.js"></script> -->

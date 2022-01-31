@@ -1,62 +1,94 @@
 /**
- * Navbar hiding
+ * Navbar brackets to animate when scrolling to a new section.
  */
 
 let sectionOffsetsTop = [];
-// window.addEventListener('load', (event) => sections = document.querySelectorAll('section'));
 window.onload = () => {
-  let sections = document.querySelectorAll('section');
+  let sections = document.querySelectorAll('section, footer');
+  // find each main section and create an object with the section name and y offset.
   sections.forEach((section, index) => {
     sectionOffsetsTop[index] = {
       secName: '#' + section.id,
       secOffset: section.offsetTop
     }
   });
+  // mark currently scrolled section as active.
+  determineCurrentScrollSection();
+  // console.log(sectionOffsetsTop);
 }
 
 // let prevScrollPos = window.scrollY;
 window.onscroll = () => {
-  let currentScrollPos = window.scrollY;
-  let navItems = document.querySelectorAll('a.nav-list__item');
+
+  determineCurrentScrollSection()
+  // Code for Auto hiding the navbar
   // let navbar = document.getElementById('navbar');
-  
   // prevScrollPos > currentScrollPos ? navbar.style.top = '0'
   // : navbar.style.top = '-98px';
-  
   // prevScrollPos = currentScrollPos;
+}
+
+function determineCurrentScrollSection() {
+  let currentScrollPos = window.scrollY;
+
+  // wait for page to load and section y offsets to be measured.
   if(sectionOffsetsTop.length !== 0){
-    sectionOffsetsTop.forEach((section, index) => {
-      if(currentScrollPos >= section.secOffset && currentScrollPos < sectionOffsetsTop[index+1]?.secOffset){
-        navItems.forEach(navItem => {
-          navItem.classList.remove('nav-list__item--active')
-          if(navItem.hash === section.secName) {
-            navItem.classList.add('nav-list__item--active')
-          }
-        });
-      }
-    });
+    // determine where the viewport is in relation to the sections
+    if(currentScrollPos <= sectionOffsetsTop[1].secOffset) {
+      toggleActiveNavItem(sectionOffsetsTop[0]);
+    } else if(currentScrollPos <= sectionOffsetsTop[2].secOffset-10) {
+      toggleActiveNavItem(sectionOffsetsTop[1]);
+    } else if(currentScrollPos <= sectionOffsetsTop[3].secOffset-10) {
+      toggleActiveNavItem(sectionOffsetsTop[2]);
+    } else if(currentScrollPos <= sectionOffsetsTop[4].secOffset-10) {
+      toggleActiveNavItem(sectionOffsetsTop[3]);
+    } else if(currentScrollPos > sectionOffsetsTop[4].secOffset-10) {
+      toggleActiveNavItem(sectionOffsetsTop[4]);
+    }
   }
 
 }
 
-
-function handleHashChange() {
+function toggleActiveNavItem(CurrentSection) {
   let navItems = document.querySelectorAll('a.nav-list__item');
-  let hashLocation = window.location.hash;
-  // console.log(hashLocation)
-  let navbar = document.getElementById('navbar');
-  navbar.style.top = '0';
-
+  let markedActiveSection = null;
+  // determine which section is currently marked as active
   navItems.forEach(item => {
-    // console.log(item.hash)
-    if(item.hash === hashLocation && item.hash !== '') {
-      item.classList.add('nav-list__item--active');
-    } else {
-      // console.log('has not matched');
-      item.classList.remove('nav-list__item--active')
+    let itemClasses = item.className.split(' ');
+    if (itemClasses.includes('nav-list__item--active')) {
+      markedActiveSection = item;
     }
-  })
+  });
+
+  // remove active mark and makr new section as active only if viewport is scrolled into another section
+  if(markedActiveSection === null || markedActiveSection.hash !== CurrentSection.secName) {
+    markedActiveSection?.classList.remove('nav-list__item--active');
+    navItems.forEach( navItem => {
+      if(navItem.hash === CurrentSection.secName) {
+        navItem.classList.add('nav-list__item--active');
+      }
+    });
+  }
 }
+
+
+// function handleHashChange() {
+//   let navItems = document.querySelectorAll('a.nav-list__item');
+//   let hashLocation = window.location.hash;
+//   console.log(hashLocation)
+//   let navbar = document.getElementById('navbar');
+//   //navbar.style.top = '0';
+
+//   navItems.forEach(item => {
+//     // console.log(item.hash)
+//     if(item.hash === hashLocation && item.hash !== '') {
+//       item.classList.add('nav-list__item--active');
+//     } else {
+//       // console.log('has not matched');
+//       item.classList.remove('nav-list__item--active')
+//     }
+//   })
+// }
 
 
 
@@ -203,11 +235,11 @@ function displayProjects() {
       </div>`;
 
     let textHalf = `<div class="project-card__text-area project-card__half">
-        <div class="project-card__header">
-          <h3>${project.title}</h3>
-          <h4>${project.year}</h4>
-        </div>
+        <h3>${project.title}</h3>
+        <div class="project-card__subhead">
         <h5>${project.subheader}</h5>
+        <h4>${project.year}</h4>
+        </div>
         ${project.description.map(paragraph => `<p>${paragraph}</p>`).join('')}
         <ul class="tech-tags">
           ${project.tech.map(techName => `<li class="tech-tags__item">${techName}</li>
@@ -224,7 +256,7 @@ function displayProjects() {
 let projectCardList = document.getElementById('projectCardList');
 projectCardList.innerHTML = displayProjects();
 
-window.addEventListener('hashchange', handleHashChange, false);
+// window.addEventListener('hashchange', handleHashChange, false);
 
 
 // icons 
