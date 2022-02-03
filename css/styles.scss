@@ -64,7 +64,7 @@ h6 {
 
 h1 {
   font-family: $primary-font-family;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 700;
   line-height: 1;
   margin: 0;
@@ -593,7 +593,12 @@ figure {
   .dropdown-content li {
     width: 100%;
     padding: 10px 15px;
-    border: 1px solid $btn-bg-color;
+    border-bottom: 1px solid $btn-bg-color;
+
+  }
+
+  .dropdown-content li:last-child {
+    border-bottom: none;
   }
   
   .about-section {
@@ -603,12 +608,17 @@ figure {
     }
   }
 
-  .project-card {
-    flex-flow: column wrap;
-    align-items: center;
-
-    .project-card__half {
-      max-width: 100%;
+  .projects-section {
+    .project-card {
+      flex-direction: column;
+      align-items: center;
+      
+      .project-card__half {
+        max-width: 100%;
+      }
+    }
+    .project-card__img-first{
+      flex-direction: column-reverse;
     }
   }
 }

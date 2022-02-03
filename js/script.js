@@ -53,11 +53,12 @@ function toggleActiveNavItem(CurrentSection) {
   let navItems = document.querySelectorAll('a.nav-list__item');
   let markedActiveSection = null;
   // determine which section is currently marked as active
-  navItems.forEach(item => {
-    let itemClasses = item.className.split(' ');
+  navItems.forEach(navItem => {
+    let itemClasses = navItem.className.split(' ');
     if (itemClasses.includes('nav-list__item--active')) {
-      markedActiveSection = item;
+      markedActiveSection = navItem;
     }
+    navItem.classList.remove('nav-list__item--active')
   });
 
   // remove active mark and makr new section as active only if viewport is scrolled into another section
@@ -104,7 +105,7 @@ let projects = [
     tech: [
       'React', 'React-Bootstrap', 'Redux', 'React-Router', 'Axios', 'Lodash', 'Prop-types', 'Sass'
     ],
-    screenshotUrl: require('../img/chicken_picker_react_screenshot.png'),
+    screenshotUrl: require('../img/chicken_picker_react_screenshot.jpg'),
     screenshotAltText: 'A screenshot of my Chicken Picker Angular client.',
     liveLink: 'https://chicken-picker-react.netlify.app/',
     githubLink: 'https://github.com/nickplamb/chicken_picker_react_client',
@@ -122,7 +123,7 @@ let projects = [
       'Typedoc',
       'Angular Material Design',
     ],
-    screenshotUrl: require('../img/chicken_picker_angular_screenshot.png'),
+    screenshotUrl: require('../img/chicken_picker_angular_screenshot.jpg'),
     screenshotAltText: 'A screenshot of my Chicken Picker Angular client.',
     liveLink: 'https://nickplamb.github.io/chicken_picker_angular_client/',
     githubLink: 'https://github.com/nickplamb/chicken_picker_angular_client',
@@ -150,7 +151,7 @@ let projects = [
     tech: [
       'DOM manipulation', 'IIFE', 'promises', 'AJAX', 'polyfills', 'CSS animations', 'modals', 'Bootstrap'
     ],
-    screenshotUrl: require('../img/trivia_app_screenshot.png'),
+    screenshotUrl: require('../img/trivia_app_screenshot.jpg'),
     screenshotAltText: 'A screenshot of my Trivia app.',
     liveLink: 'https://www.trivia.nickplamb.com/',
     githubLink: 'https://github.com/nickplamb/trivia-app',
@@ -164,7 +165,7 @@ let projects = [
     tech: [
       'AWS Lambda functions', 'OAuth', 'CRA', 'TDD', 'BDD', 'Gherkin Syntax', 'PWA', 'OOP class inheritance', 'performance monitoring'
     ],
-    screenshotUrl: require('../img/meet_app_screenshot.png'),
+    screenshotUrl: require('../img/meet_app_screenshot.jpg'),
     screenshotAltText: 'A screenshot of my Meet app.',
     liveLink: 'https://nickplamb.github.io/meet-app/',
     githubLink: 'https://github.com/nickplamb/meet-app',
@@ -247,7 +248,7 @@ function displayProjects() {
         </ul>
       </div>`;
 
-    projectCards += index%2 ? `<div class="project-card">${imageHalf + textHalf}</div>`
+    projectCards += index%2 ? `<div class="project-card project-card__img-first">${imageHalf + textHalf}</div>`
       : `<div class="project-card">${textHalf + imageHalf}</div>`;
   });
   return projectCards
