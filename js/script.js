@@ -165,8 +165,8 @@ let projects = [
     tech: [
       'Express.js', 'Mongoose', 'MongoDB', 'Passport', 'Bcrypt', 'Morgan', 'Jsonwebtoken', 'Jsdoc'
     ],
-    screenshotUrl: null,
-    screenshotAltText: null,
+    screenshotUrl: require('../img/chicken_picker_postman_testing.jpg'),
+    screenshotAltText: 'Testing user Authentication with Postman.',
     liveLink: null,
     githubLink: 'https://github.com/nickplamb/Chickens_api',
     caseStudyLink: './chicken-picker-case-study.html'
@@ -222,8 +222,8 @@ let projects = [
     tech: [
       'PHP', 'C++/Arduino', 'MySQL', 'ESP8266', 'DHT22 Sensors', 'Solar Charging', 'Small Electronics'
     ],
-    screenshotUrl: null,
-    screenshotAltText: null,
+    screenshotUrl: require('../img/coop_logger_device_and_cables.jpg'),
+    screenshotAltText: 'A photo of the Coop Logger enclosure with wires run for sensors and solar panel.',
     liveLink: 'https://thingspeak.com/channels/1123315',
     githubLink: 'https://github.com/nickplamb/Coop_logger',
     caseStudyLink: null
@@ -237,7 +237,7 @@ let projects = [
       'C++/Arduino', 'Small Electronics'
     ],
     screenshotUrl: null,
-    screenshotAltText: null,
+  screenshotAltText: null,
     liveLink: null,
     githubLink: 'https://github.com/nickplamb/MTWI_nano',
     caseStudyLink: null
