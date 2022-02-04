@@ -2,20 +2,23 @@
  * Navbar brackets to animate when scrolling to a new section.
  */
 
-let sectionOffsetsTop = [];
+// let sectionOffsetsTop = [];
 window.onload = () => {
-  let sections = document.querySelectorAll('section, footer');
-  // find each main section and create an object with the section name and y offset.
-  sections.forEach((section, index) => {
-    sectionOffsetsTop[index] = {
-      secName: '#' + section.id,
-      secOffset: section.offsetTop
-    }
-  });
+  // let sections = document.querySelectorAll('section, footer');
+  // // find each main section and create an object with the section name and y offset.
+  // sections.forEach((section, index) => {
+  //   sectionOffsetsTop[index] = {
+  //     secName: '#' + section.id,
+  //     secOffset: section.offsetTop
+  //   }
+  // });
   // mark currently scrolled section as active.
-  determineCurrentScrollSection();
+  // determineCurrentScrollSection();
+
+  activateNavbar()
   // console.log(sectionOffsetsTop);
-  window.addEventListener('scroll', () => throttleScroll(determineCurrentScrollSection,100), false);
+  // window.addEventListener('scroll', () => throttleScroll(determineCurrentScrollSection,100), false);
+  window.addEventListener('scroll', () => throttleScroll(activateNavbar, 100), false);
 }
 
 // // let prevScrollPos = window.scrollY;
@@ -37,11 +40,37 @@ function throttleScroll(method, delay) {
   }, delay);
 }
 
+
+// https://dev.to/areeburrub/change-nav-link-s-style-as-you-scroll-4p62
+function activateNavbar() {
+  let sections = document.querySelectorAll("section, footer");
+  let navItems = document.querySelectorAll('a.nav-list__item');
+
+  let currentSection = '';
+
+  sections.forEach(section => {
+    let sectionTop = section.offsetTop;
+    
+    if(window.scrollY >= sectionTop - 60) {
+      currentSection = '#' + section.id;
+    }
+  });
+
+  navItems.forEach( navItem => {
+    navItem.classList.remove('nav-list__item--active');
+    if(navItem.hash === currentSection) {
+      navItem.classList.add('nav-list__item--active');
+    }
+  })
+}
+
+
+
 function determineCurrentScrollSection() {
   let currentScrollPos = window.scrollY;
 //console.log(currentScrollPos, sectionOffsetsTop);
   // wait for page to load and section y offsets to be measured.
-  if(sectionOffsetsTop.length !== 0){
+  if(sectionOffsetsTop.length !== 0){getAttribute
     //console.log(currentScrollPos, sectionOffsetsTop[4].secOffset-200);
     
     // determine what section is currently in view
@@ -57,7 +86,6 @@ function determineCurrentScrollSection() {
       updateActiveNavItem(sectionOffsetsTop[4]);
     }
   }
-
 }
 
 // function updateActiveNavItem(CurrentSection) {
@@ -73,8 +101,6 @@ function determineCurrentScrollSection() {
 //     // navItem.classList.remove('nav-list__item--active')
 //   });
 
-
-
 //   // remove active mark and make new section as active only if section has changed
 //   if(markedActiveSection === null || markedActiveSection.hash !== CurrentSection.secName) {
 //     console.log(markedActiveSection, CurrentSection.secName);
@@ -87,18 +113,18 @@ function determineCurrentScrollSection() {
 //   }
 // }
 
-function updateActiveNavItem(CurrentSection) {
-  let navItems = document.querySelectorAll('a.nav-list__item');
+// function updateActiveNavItem(CurrentSection) {
+//   let navItems = document.querySelectorAll('a.nav-list__item');
 
-  navItems.forEach(navItem => {
-    navItem.classList.remove('nav-list__item--active');
+//   navItems.forEach(navItem => {
+//     navItem.classList.remove('nav-list__item--active');
 
-    if(navItem.hash === CurrentSection.secName) {
-      navItem.classList.add('nav-list__item--active');
-      //console.log(navItem.hash);
-    }
-  });
-}
+//     if(navItem.hash === CurrentSection.secName) {
+//       navItem.classList.add('nav-list__item--active');
+//       //console.log(navItem.hash);
+//     }
+//   });
+// }
 
 
 // function handleHashChange() {
