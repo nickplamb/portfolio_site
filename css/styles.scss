@@ -19,6 +19,7 @@ font-family: 'Roboto Slab', serif;
  //$accent-color: #5271ff; //#f3d250;
  $accent-color: #708AFF;
  $bg-color-transparent : rgba(0,0,0,0.9);
+ $bg-color-transparent-2 : rgba(0,0,0,0.6);
  $accent-color-2: #F4D666;
  // $accent-color-2: #FF6542;
  //$accent-color-3: #9FB77B;
@@ -64,7 +65,7 @@ h6 {
 
 h1 {
   font-family: $primary-font-family;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 700;
   line-height: 1;
   margin: 0;
@@ -138,12 +139,12 @@ button,
 .button {
   border: none;
   font-family: inherit;
-  font-weight: 300;
+  font-weight: 400;
   opacity: 1;
   // background-color: $btn-bg-color;
   //background-color: $accent-color;
   // background-color: $accent-color;
-  background: linear-gradient($btn-bg-hover-color 4%, $accent-color 100%);
+  background: linear-gradient($btn-bg-hover-color 1%, $accent-color 100%);
   // color: $btn-txt-color);
   color: $secondary-font-color;
   text-decoration: none;
@@ -161,9 +162,18 @@ button:focus,
   cursor: pointer;
   color: $secondary-font-color;
   // background: $btn-bg-hover-color;
-  background: linear-gradient($btn-bg-hover-color 50%, $accent-color 100%);
+  background: linear-gradient($btn-bg-hover-color 40%, $accent-color 100%);
 }
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 40px;
+  color: $bg-color-transparent-2;
+  //background-color:$bg-color-transparent-2;
+  z-index: 10;
+}
 /* ------------Header--------------------------------------- */
 
 
@@ -188,8 +198,8 @@ button:focus,
     line-height: 1.6;
     margin: 0;
     letter-spacing: 0.08em;
+    // background-color: $btn-bg-color;
   }
-  
   .site-logo:hover {
     color: $primary-font-color;
   }
@@ -225,10 +235,6 @@ a.nav-list__item {
 
 a.nav-list__item:hover {
   color: $primary-font-color;
-}
-
-a.button {
-  padding: 10px;
 }
 
 .dropdown-menu__icon {
@@ -299,9 +305,9 @@ li a::after {
   }
   
   .social-icons {
-    font-size: 60px;
-    color: #000;
-    // width: 30px;
+    font-size: 50px;
+    color: $primary-font-color;
+    // width: 30px; // rough size if .SVG instead of FontAwesome
     // height: 30px;
   }
 }
@@ -324,31 +330,47 @@ section {
 .profile .section-content{
   display: flex;
   flex-flow: row wrap;
+  gap: 0 40px;
   min-height: 325px;
   padding: 50px 10px 0 10px;;
-  justify-content: center;
+  justify-content: space-evenly;
+
+  .social-icons {
+    font-size: 40px;
+    color: $primary-font-color;
+    margin: 30px 5px;
+  }
 }
 
 .accent-box{
-  width: 70%;
-  height: 120px;
+  width: 450px;
+  height: 150px;
   background-color: $accent-color-2;
-  z-index: -1;
-  position: absolute;
-  left: 15%;
-  top: 350px;
+  margin: -130px 0 0 0;
+  max-width: 100%;
+  //position: relative;
+  //z-index: -1;
+  //position: absolute;
+  // left: 15%;
+  // top: 350px;
 }
 
 .profile__portrait {
-  max-width: 350px;
+  max-width: 300px;
   border-radius: 50%;
   background-color: $bg-color;
-  border: 8px solid $bg-color;
+  // border: 8px solid $bg-color;
+  margin: 0 auto;
+  display: block;
 }
 
 .profile__item {
-  margin: 0 50px;
-  max-width: 350px;
+  width: 450px;
+  max-width: 100%;
+}
+
+.profile-portrait__container {
+ padding-top: 35px;
 }
 
 .resume-download {
@@ -488,7 +510,7 @@ section {
 
     a {
       margin: 10px 5px;
-      // padding: 10px 15px;
+      padding: 10px 15px;
     }
   }
 
@@ -540,9 +562,10 @@ figure {
   }
 }
 
-#imbedded_chicken_picker {
-  width: 80%;
-  height: 500px;
+.case-study {
+  section {
+    padding: 40px 0;
+  }
 }
 
 
@@ -666,6 +689,9 @@ figure {
       max-width: 100%;
     }
   }
+  .profile__portrait {
+    max-width: 90%;
+  }
 }
 
 @media all and (max-width: 500px) {
@@ -702,14 +728,7 @@ figure {
   }
 
   .profile__portrait {
-    max-width: 300px;
-  }
-
-  .accent-box {
-    width: 90%;
-    height: 100px;
-    left: 5%;
-    top: 300px;
+    max-width: 95%;
   }
 
   .about-section {
@@ -721,6 +740,9 @@ figure {
       padding: 40px;
       max-width: 100%;
     }
+  }
+  figure {
+    max-width: 90%;
   }
 }
 
@@ -750,12 +772,12 @@ figure {
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 25px;
     margin: 10px 0 0 0;
   }
 
   h2 {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   h2::first-letter {
@@ -763,21 +785,15 @@ figure {
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   h4 {
     font-size: 20px;
   }
 
-  .accent-box {
-    width: 90%;
-    left: 5%;
-    top: 310px;
-  }
-
   .section-content {
-    max-width: 94%;
+    max-width: 92%;
   }
 
   .about-me__content {
@@ -785,4 +801,7 @@ figure {
     max-width: 100%;
   }
 
+  figure {
+    max-width: 90%;
+  }
 }
