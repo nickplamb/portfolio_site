@@ -15,61 +15,89 @@ window.onload = () => {
   // mark currently scrolled section as active.
   determineCurrentScrollSection();
   // console.log(sectionOffsetsTop);
+  window.addEventListener('scroll', () => throttleScroll(determineCurrentScrollSection,100), false);
 }
 
-// let prevScrollPos = window.scrollY;
-window.onscroll = () => {
+// // let prevScrollPos = window.scrollY;
+// window.onscroll = () => {
 
-  determineCurrentScrollSection()
-  // Code for Auto hiding the navbar
-  // let navbar = document.getElementById('navbar');
-  // prevScrollPos > currentScrollPos ? navbar.style.top = '0'
-  // : navbar.style.top = '-98px';
-  // prevScrollPos = currentScrollPos;
+//   throttleScroll(determineCurrentScrollSection,100);
+//   //determineCurrentScrollSection()
+//   // Code for Auto hiding the navbar
+//   // let navbar = document.getElementById('navbar');
+//   // prevScrollPos > currentScrollPos ? navbar.style.top = '0'
+//   // : navbar.style.top = '-98px';
+//   // prevScrollPos = currentScrollPos;
+// }
+
+function throttleScroll(method, delay) {
+  clearTimeout(method._tId);
+  method._tId= setTimeout( () => {
+    method();
+  }, delay);
 }
 
 function determineCurrentScrollSection() {
   let currentScrollPos = window.scrollY;
-
+//console.log(currentScrollPos, sectionOffsetsTop);
   // wait for page to load and section y offsets to be measured.
   if(sectionOffsetsTop.length !== 0){
-    // determine where the viewport is in relation to the sections
-    if(currentScrollPos <= sectionOffsetsTop[1].secOffset) {
-      toggleActiveNavItem(sectionOffsetsTop[0]);
+    //console.log(currentScrollPos, sectionOffsetsTop[4].secOffset-200);
+    
+    // determine what section is currently in view
+    if(currentScrollPos <= sectionOffsetsTop[1].secOffset-10) {
+      updateActiveNavItem(sectionOffsetsTop[0]);
     } else if(currentScrollPos <= sectionOffsetsTop[2].secOffset-10) {
-      toggleActiveNavItem(sectionOffsetsTop[1]);
+      updateActiveNavItem(sectionOffsetsTop[1]);
     } else if(currentScrollPos <= sectionOffsetsTop[3].secOffset-10) {
-      toggleActiveNavItem(sectionOffsetsTop[2]);
-    } else if(currentScrollPos <= sectionOffsetsTop[4].secOffset-10) {
-      toggleActiveNavItem(sectionOffsetsTop[3]);
-    } else if(currentScrollPos > sectionOffsetsTop[4].secOffset-10) {
-      toggleActiveNavItem(sectionOffsetsTop[4]);
+      updateActiveNavItem(sectionOffsetsTop[2]);
+    } else if(currentScrollPos <= sectionOffsetsTop[4].secOffset-300) {
+      updateActiveNavItem(sectionOffsetsTop[3]);
+    } else {
+      updateActiveNavItem(sectionOffsetsTop[4]);
     }
   }
 
 }
 
-function toggleActiveNavItem(CurrentSection) {
-  let navItems = document.querySelectorAll('a.nav-list__item');
-  let markedActiveSection = null;
-  // determine which section is currently marked as active
-  navItems.forEach(navItem => {
-    let itemClasses = navItem.className.split(' ');
-    if (itemClasses.includes('nav-list__item--active')) {
-      markedActiveSection = navItem;
-    }
-    navItem.classList.remove('nav-list__item--active')
-  });
+// function updateActiveNavItem(CurrentSection) {
+//   let navItems = document.querySelectorAll('a.nav-list__item');
+//   let markedActiveSection = null;
+//   // determine which section is currently marked as active
+//   navItems.forEach(navItem => {
+//     let itemClasses = navItem.className.split(' ');
+//     if (itemClasses.includes('nav-list__item--active')) {
+//       markedActiveSection = navItem;
+//       return;
+//     }
+//     // navItem.classList.remove('nav-list__item--active')
+//   });
 
-  // remove active mark and makr new section as active only if viewport is scrolled into another section
-  if(markedActiveSection === null || markedActiveSection.hash !== CurrentSection.secName) {
-    markedActiveSection?.classList.remove('nav-list__item--active');
-    navItems.forEach( navItem => {
-      if(navItem.hash === CurrentSection.secName) {
-        navItem.classList.add('nav-list__item--active');
-      }
-    });
-  }
+
+
+//   // remove active mark and make new section as active only if section has changed
+//   if(markedActiveSection === null || markedActiveSection.hash !== CurrentSection.secName) {
+//     console.log(markedActiveSection, CurrentSection.secName);
+//     markedActiveSection?.classList.remove('nav-list__item--active');
+//     navItems.forEach( navItem => {
+//       if(navItem.hash === CurrentSection.secName) {
+//         navItem.classList.add('nav-list__item--active');
+//       }
+//     });
+//   }
+// }
+
+function updateActiveNavItem(CurrentSection) {
+  let navItems = document.querySelectorAll('a.nav-list__item');
+
+  navItems.forEach(navItem => {
+    navItem.classList.remove('nav-list__item--active');
+
+    if(navItem.hash === CurrentSection.secName) {
+      navItem.classList.add('nav-list__item--active');
+      //console.log(navItem.hash);
+    }
+  });
 }
 
 
