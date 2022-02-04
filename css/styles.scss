@@ -264,10 +264,13 @@ li a::after {
   transform: translateX(-10px);
 }
 
-li a:hover::before,
-li a:hover::after {
-  opacity: 1;
-  transform: translateX(0);
+@media (hover: hover) {
+
+  li a:hover::before,
+  li a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .nav-list__item--active::before,
